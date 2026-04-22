@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Home",
+    "stories": "Patient Stories",
+    "resources": "Resources",
+    "donate": "Donate"
+  },
+  "language": {
+    "label": "Language",
+    "english": "English",
+    "hindi": "हिंदी"
+  },
+  "home": {
+    "tagline": "Sickle Cell Awareness · Madhya Pradesh",
+    "missionLine1": "Towards a",
+    "missionLine2": "Sickle Cell-free",
+    "missionLine3": "Madhya Pradesh",
+    "subtitle": "Walking with the Baiga and Gond communities of Anuppur, Dindori, Mandla, Shahdol, Umaria and Sidhi — through screenings, care and dignity.",
+    "cta": {
+      "donate": "Support a screening",
+      "learn": "Our work"
+    }
+  },
+  "footer": {
+    "tagline": "A Sickle Cell Disease initiative for tribal Madhya Pradesh.",
+    "rights": "All rights reserved."
+  },
+  "org": {
+    "name": "Saksham Sickle Cell Foundation"
+  }
+}
