@@ -1,0 +1,19 @@
+import storyMeena from "@/assets/story-meena.jpg";
+import storyRamesh from "@/assets/story-ramesh.jpg";
+import storySavitri from "@/assets/story-savitri.jpg";
+import storyArjun from "@/assets/story-arjun.jpg";
+
+export interface Story {
+  id: string;
+  image: string;
+  district: string;
+  age: number;
+  ageLabelKey: string;
+}
+
+export const STORIES: Story[] = [
+  { id: "meena", image: storyMeena, district: "Dindori", age: 14, ageLabelKey: "stories.ageYears" },
+  { id: "ramesh", image: storyRamesh, district: "Mandla", age: 52, ageLabelKey: "stories.ageYears" },
+  { id: "savitri", image: storySavitri, district: "Anuppur", age: 31, ageLabelKey: "stories.ageYears" },
+  { id: "arjun", image: storyArjun, district: "Shahdol", age: 9, ageLabelKey: "stories.ageYears" },
+];
