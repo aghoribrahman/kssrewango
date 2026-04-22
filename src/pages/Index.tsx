@@ -5,6 +5,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import GondPattern from "@/components/GondPattern";
 import BurgundyRibbon from "@/components/BurgundyRibbon";
+import ImpactStats from "@/components/ImpactStats";
+import DistrictMap from "@/components/DistrictMap";
 import { useLocalePath } from "@/hooks/useLocalePath";
 
 const Hero = () => {
@@ -131,18 +133,8 @@ const Index = () => (
     <main>
       <Hero />
       <FocusDistricts />
-      {/* Future sections (Impact stats, District Map, Stories preview) will mount here. */}
-      <section className="bg-parchment py-24 px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-xs uppercase tracking-[0.3em] text-primary/80 mb-4">Coming next</p>
-          <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">
-            Impact stats, district map, patient stories
-          </h2>
-          <p className="text-foreground/60 leading-relaxed">
-            We've laid the bilingual foundation — palette, Devanagari typography, locale routing and a language switcher. Tell me which section to build next.
-          </p>
-        </div>
-      </section>
+      <ImpactStats />
+      <DistrictMap />
     </main>
     <Footer />
   </>
