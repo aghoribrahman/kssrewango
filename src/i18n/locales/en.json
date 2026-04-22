@@ -124,7 +124,69 @@
     "tagline": "A Sickle Cell Disease initiative for tribal Madhya Pradesh.",
     "rights": "All rights reserved."
   },
+  "donation": {
+    "eyebrow": "Your support, their breath",
+    "heading": "Support the journey",
+    "subtitle": "Your contribution brings screening, care, and dignity to the tribal heartlands of Madhya Pradesh.",
+    "impact": {
+      "t1": {
+        "amount": "₹500",
+        "label": "Screening Kit",
+        "description": "Supports 10 high-quality screening kits for a village camp."
+      },
+      "t2": {
+        "amount": "₹2000",
+        "label": "Monthly Medicine",
+        "description": "Provides monthly hydroxyurea and folic acid for 5 patients."
+      },
+      "t3": {
+        "amount": "₹5000",
+        "label": "Awareness Camp",
+        "description": "Funds a full-day awareness and screening camp in a remote block."
+      },
+      "custom": "Custom Amount"
+    },
+    "form": {
+      "personal": "Personal Details",
+      "payment": "Payment Method",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address",
+      "pan": "PAN Number (for 80G)",
+      "phone": "Phone Number",
+      "next": "Continue",
+      "back": "Back",
+      "submit": "Proceed to Pay",
+      "secureNote": "Your data is encrypted and secure. Tax benefits apply for Indian donors.",
+      "local": "UPI / Indian Cards",
+      "international": "International / PayPal"
+    }
+  },
+  "resources": {
+    "eyebrow": "The Knowledge Library",
+    "heading": "Awareness & Care Guides",
+    "subtitle": "Empowering patients, families, and health workers with verified medical and lifestyle information.",
+    "search": "Search for guides (e.g. nutrition, crisis)...",
+    "filter": {
+      "all": "All Resources",
+      "hindi": "Hindi (हिंदी)",
+      "english": "English",
+      "categories": {
+        "all": "All",
+        "prevention": "Prevention",
+        "care": "Daily Care",
+        "nutrition": "Nutrition",
+        "rights": "Patient Rights"
+      }
+    },
+    "card": {
+      "download": "Download PDF",
+      "share": "Share on WhatsApp",
+      "summary": "Quick Summary",
+      "lang": "Language"
+    }
+  },
   "org": {
-    "name": "Saksham Sickle Cell Foundation"
+    "name": "Kiran Seva Sansthan"
   }
 }

@@ -44,7 +44,7 @@ const Hero = () => {
       />
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 py-32 md:py-40">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
         <div className="flex items-center gap-3 mb-8 animate-fade-up">
           <BurgundyRibbon className="w-5 h-6" />
           <span className="text-xs md:text-sm tracking-[0.25em] uppercase text-amber-warm/90">
@@ -53,18 +53,18 @@ const Hero = () => {
         </div>
 
         <h1
-          className="font-serif text-parchment leading-[0.95] mb-10 animate-fade-up max-w-5xl"
+          className="font-serif text-parchment leading-[0.95] mb-8 animate-fade-up max-w-4xl"
           style={{ animationDelay: "120ms" }}
         >
-          <span className={`block text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[7.5rem] ${isHindi ? "leading-[1.1]" : ""}`}>
+          <span className={`block text-[2.25rem] sm:text-5xl md:text-6xl lg:text-[5.5rem] ${isHindi ? "leading-[1.1]" : ""}`}>
             {t("home.missionLine1")}
           </span>
           <span
-            className={`block text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[7.5rem] text-amber-warm italic ${isHindi ? "not-italic leading-[1.1]" : ""}`}
+            className={`block text-[2.25rem] sm:text-5xl md:text-6xl lg:text-[5.5rem] text-amber-warm italic ${isHindi ? "not-italic leading-[1.1]" : ""}`}
           >
             {t("home.missionLine2")}
           </span>
-          <span className={`block text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[7.5rem] ${isHindi ? "leading-[1.1]" : ""}`}>
+          <span className={`block text-[2.25rem] sm:text-5xl md:text-6xl lg:text-[5.5rem] ${isHindi ? "leading-[1.1]" : ""}`}>
             {t("home.missionLine3")}
           </span>
         </h1>
@@ -107,7 +107,7 @@ const Hero = () => {
 const FocusDistricts = () => {
   const districts = ["Anuppur", "Dindori", "Mandla", "Shahdol", "Umaria", "Sidhi"];
   return (
-    <section className="bg-parchment border-y border-border/60 overflow-hidden py-5">
+    <section className="bg-parchment border-y border-border/60 overflow-hidden py-3">
       <div className="animate-marquee whitespace-nowrap flex">
         {Array.from({ length: 4 }).map((_, i) => (
           <div key={i} className="flex shrink-0">

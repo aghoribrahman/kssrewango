@@ -6,7 +6,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { LocaleProvider, RootLocaleRedirect } from "@/i18n/LocaleProvider";
 import Index from "./pages/Index";
 import Stories from "./pages/Stories";
-import Placeholder from "./pages/Placeholder";
+import Resources from "./pages/Resources";
+import Donation from "./pages/Donation";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -39,7 +40,7 @@ const App = () => (
             path="/:lang/resources"
             element={
               <LocaleProvider>
-                <Placeholder titleKey="nav.resources" />
+                <Resources />
               </LocaleProvider>
             }
           />
@@ -47,7 +48,7 @@ const App = () => (
             path="/:lang/donate"
             element={
               <LocaleProvider>
-                <Placeholder titleKey="nav.donate" />
+                <Donation />
               </LocaleProvider>
             }
           />

@@ -21,7 +21,7 @@ const ImpactStats = () => {
   const locale = i18n.language === "hi" ? "hi-IN" : "en-IN";
 
   return (
-    <section className="relative bg-forest text-parchment overflow-hidden py-20 md:py-28">
+    <section className="relative bg-forest text-parchment overflow-hidden py-14 md:py-20">
       <GondPattern
         className="absolute -top-10 right-0 w-[26rem] h-[26rem] text-amber-warm/15 pointer-events-none"
       />
@@ -30,14 +30,14 @@ const ImpactStats = () => {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
-        <div className="max-w-2xl mb-14">
-          <p className="text-xs uppercase tracking-[0.3em] text-amber-warm/90 mb-4">
+        <div className="max-w-2xl mb-10">
+          <p className="text-xs uppercase tracking-[0.3em] text-amber-warm/90 mb-3">
             {t("impact.eyebrow")}
           </p>
-          <h2 className="font-serif text-4xl md:text-6xl leading-tight">
+          <h2 className="font-serif text-3xl md:text-5xl leading-tight">
             {t("impact.heading")}
           </h2>
-          <p className="mt-5 text-parchment/70 text-base md:text-lg leading-relaxed">
+          <p className="mt-4 text-parchment/70 text-sm md:text-base leading-relaxed">
             {t("impact.subtitle")}
           </p>
         </div>
@@ -46,9 +46,9 @@ const ImpactStats = () => {
           {STATS.map((stat) => (
             <div
               key={stat.labelKey}
-              className="bg-forest p-6 md:p-8 flex flex-col gap-2"
+              className="bg-forest p-5 md:p-6 flex flex-col gap-1.5"
             >
-              <dd className="font-serif text-4xl md:text-6xl text-amber-warm leading-none">
+              <dd className="font-serif text-3xl md:text-5xl text-amber-warm leading-none">
                 <CountUp end={stat.value} suffix={stat.suffix} locale={locale} />
               </dd>
               <dt className="text-sm md:text-base text-parchment font-medium mt-3">

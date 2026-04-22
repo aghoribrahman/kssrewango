@@ -43,7 +43,7 @@ const Header = () => {
           : "bg-parchment/90 backdrop-blur-md border-b border-border/60",
       )}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-5 md:px-8 py-4">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-5 md:px-8 py-2.5">
         <Link
           to={localePath()}
           className={cn(
@@ -51,8 +51,8 @@ const Header = () => {
             transparent ? "text-parchment" : "text-foreground",
           )}
         >
-          <BurgundyRibbon className="w-6 h-7 shrink-0" />
-          <span className="text-base md:text-lg font-serif leading-tight">
+          <BurgundyRibbon className="w-5 h-6 shrink-0" />
+          <span className="text-sm md:text-base font-serif leading-tight">
             {t("org.name")}
           </span>
         </Link>
