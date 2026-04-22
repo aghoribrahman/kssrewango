@@ -21,6 +21,51 @@
       "learn": "Our work"
     }
   },
+  "impact": {
+    "eyebrow": "Our impact, in numbers",
+    "heading": "Every number is a family that no longer fights alone.",
+    "subtitle": "From village haats to district hospitals, our teams have travelled deep into tribal Madhya Pradesh to screen, counsel and care.",
+    "screenings": {
+      "label": "Screenings done",
+      "helper": "Across schools, anganwadis and gram sabhas."
+    },
+    "lives": {
+      "label": "Lives impacted",
+      "helper": "Patients, parents and carriers supported."
+    },
+    "districts": {
+      "label": "Tribal districts",
+      "helper": "Focus belt across eastern MP."
+    },
+    "camps": {
+      "label": "Awareness camps",
+      "helper": "Run alongside ASHA & ANM workers."
+    }
+  },
+  "map": {
+    "eyebrow": "Where we work",
+    "heading": "Six districts. One promise.",
+    "subtitle": "Hover or tap a district to see when our next screening camp arrives.",
+    "activeLabel": "Currently viewing",
+    "nextCamp": "Next screening camp",
+    "cta": "Local ASHA workers and tribal community leaders co-host every camp.",
+    "districts": {
+      "anuppur": "Anuppur",
+      "dindori": "Dindori",
+      "mandla": "Mandla",
+      "shahdol": "Shahdol",
+      "umaria": "Umaria",
+      "sidhi": "Sidhi"
+    },
+    "camps": {
+      "anuppur": "12 May · Pushparajgarh CHC",
+      "dindori": "18 May · Bajag Gram Sabha",
+      "mandla": "24 May · Bichhiya Block Hospital",
+      "shahdol": "29 May · Beohari PHC",
+      "umaria": "04 Jun · Manpur tribal school",
+      "sidhi": "09 Jun · Kusmi block headquarters"
+    }
+  },
   "footer": {
     "tagline": "A Sickle Cell Disease initiative for tribal Madhya Pradesh.",
     "rights": "All rights reserved."
