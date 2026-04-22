@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LocaleProvider, RootLocaleRedirect } from "@/i18n/LocaleProvider";
 import Index from "./pages/Index";
+import Stories from "./pages/Stories";
 import Placeholder from "./pages/Placeholder";
 import NotFound from "./pages/NotFound";
 
@@ -30,7 +31,7 @@ const App = () => (
             path="/:lang/stories"
             element={
               <LocaleProvider>
-                <Placeholder titleKey="nav.stories" />
+                <Stories />
               </LocaleProvider>
             }
           />
