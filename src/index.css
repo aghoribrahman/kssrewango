@@ -90,10 +90,13 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
+    min-height: 100vh;
+    overflow-x: hidden;
     font-family: "Hind", system-ui, -apple-system, sans-serif;
     font-feature-settings: "kern", "liga";
     text-rendering: optimizeLegibility;

@@ -7,6 +7,9 @@ import { LocaleProvider, RootLocaleRedirect } from "@/i18n/LocaleProvider";
 import Index from "./pages/Index";
 import Stories from "./pages/Stories";
 import Resources from "./pages/Resources";
+import About from "./pages/About";
+import Careers from "./pages/Careers";
+import Volunteer from "./pages/Volunteer";
 import Donation from "./pages/Donation";
 import NotFound from "./pages/NotFound";
 
@@ -41,6 +44,30 @@ const App = () => (
             element={
               <LocaleProvider>
                 <Resources />
+              </LocaleProvider>
+            }
+          />
+          <Route
+            path="/:lang/about"
+            element={
+              <LocaleProvider>
+                <About />
+              </LocaleProvider>
+            }
+          />
+          <Route
+            path="/:lang/careers"
+            element={
+              <LocaleProvider>
+                <Careers />
+              </LocaleProvider>
+            }
+          />
+          <Route
+            path="/:lang/volunteer"
+            element={
+              <LocaleProvider>
+                <Volunteer />
               </LocaleProvider>
             }
           />

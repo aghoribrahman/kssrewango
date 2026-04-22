@@ -3,6 +3,10 @@
     "home": "Home",
     "stories": "Patient Stories",
     "resources": "Resources",
+    "about": "About Us",
+    "getInvolved": "Get Involved",
+    "careers": "Careers",
+    "volunteer": "Volunteer",
     "donate": "Donate"
   },
   "language": {
@@ -188,5 +192,242 @@
   },
   "org": {
     "name": "Kiran Seva Sansthan"
+  },
+  "about": {
+    "eyebrow": "About Kiran Seva Sansthan",
+    "heading": "Our Story, Our Promise",
+    "subtitle": "Born from the belief that no family should fight sickle cell alone, we walk alongside tribal communities in Madhya Pradesh — bringing screening, care, and dignity to every village.",
+    "story": {
+      "eyebrow": "Our Journey",
+      "heading": "How We Started",
+      "paragraphs": [
+        "In 2023, a small team of health workers and community volunteers gathered in Anuppur with a simple question: why were so many tribal families living with undiagnosed sickle cell disease?",
+        "The answer led us deeper — into remote villages where healthcare was a day's journey away, where the pain was called 'karma' instead of a treatable condition, where children missed school and elders suffered in silence.",
+        "We started with one screening camp in Bajag. Then another in Bichhiya. Word spread through word-of-mouth, through ASHA workers who saw the difference early diagnosis made, through parents who finally had answers.",
+        "Today, Kiran Seva Sansthan works across six tribal districts of Madhya Pradesh — Anuppur, Dindori, Mandla, Shahdol, Umaria, and Sidhi. We have conducted over 240 camps, screened more than 50,000 individuals, and touched the lives of over 12,000 families.",
+        "But numbers don't tell the full story. What matters is the child who can now attend school without pain. The mother who knows how to protect her baby. The elder who finally understands that the pain was never their fault."
+      ],
+      "foundedLabel": "Founded",
+      "districtsLabel": "Districts Served",
+      "districts": "6 Tribal Districts",
+      "campsLabel": "Screening Camps",
+      "camps": "240+ and Growing",
+      "screeningsLabel": "Lives Screened",
+      "screenings": "50,000+"
+    },
+    "mission": {
+      "eyebrow": "What Drives Us",
+      "heading": "Our Mission & Vision",
+      "cards": {
+        "care": {
+          "title": "Compassionate Care",
+          "description": "Free screening camps, treatment support, and follow-up care for every patient we serve. No one turned away. No family left behind."
+        },
+        "awareness": {
+          "title": "Community Awareness",
+          "description": "Education in local languages — Hindi, Baigani, and Gondi — so every family understands sickle cell, from symptoms to prevention to treatment options."
+        },
+        "dignity": {
+          "title": "Dignity & Respect",
+          "description": "We honor Baiga and Gond traditions, work with consent, and ensure every story is shared with dignity. Healthcare is not just medicine — it's humanity."
+        }
+      }
+    },
+    "values": {
+      "eyebrow": "What We Believe",
+      "heading": "Our Core Values",
+      "items": {
+        "community": {
+          "title": "Community-Led Approach",
+          "description": "We don't work for tribal communities — we work with them. Every camp is co-hosted with local ASHA workers, tribal leaders, and village health committees. The community knows what it needs; we bring the tools and support to make it happen."
+        },
+        "transparency": {
+          "title": "Radical Transparency",
+          "description": "Every rupee is accounted for. We publish impact metrics, maintain 80G tax compliance, and ensure donors see exactly how their contribution changes lives."
+        },
+        "impact": {
+          "title": "Sustainable Impact",
+          "description": "We train local health workers, build relationships with district hospitals, and create systems that last beyond our presence. Real change doesn't end when we leave."
+        }
+      }
+    },
+    "cta": {
+      "eyebrow": "Join Our Mission",
+      "heading": "Be Part of the Change",
+      "body": "Whether you donate, volunteer, or simply share our story, you become part of a movement towards a sickle cell-free Madhya Pradesh. Every action counts.",
+      "donate": "Support a Screening",
+      "stories": "Read Patient Stories"
+    }
+  },
+  "careers": {
+    "eyebrow": "Join Our Team",
+    "heading": "Build a Career with Purpose",
+    "subtitle": "Work alongside tribal communities in Madhya Pradesh to create lasting change. Every day at KSS is an opportunity to impact lives and build a healthier future.",
+    "benefits": {
+      "eyebrow": "Why Work With Us",
+      "heading": "More Than Just a Job",
+      "mission": {
+        "title": "Mission-Driven Work",
+        "description": "Every role directly contributes to screening, treating, and supporting families affected by sickle cell disease."
+      },
+      "community": {
+        "title": "Community Connection",
+        "description": "Work directly with Baiga and Gond communities, learning from their wisdom while sharing your expertise."
+      },
+      "growth": {
+        "title": "Professional Growth",
+        "description": "Access training programs, conferences, and mentorship to develop your skills in public health and community development."
+      },
+      "culture": {
+        "title": "Cultural Immersion",
+        "description": "Experience the rich traditions of tribal Madhya Pradesh while contributing to meaningful healthcare initiatives."
+      }
+    },
+    "positions": {
+      "eyebrow": "Current Openings",
+      "heading": "Open Positions",
+      "apply": "Apply Now",
+      "chw": {
+        "title": "Community Health Worker",
+        "location": "Anuppur",
+        "type": "Full-time"
+      },
+      "coordinator": {
+        "title": "Program Coordinator",
+        "location": "Mandla",
+        "type": "Full-time"
+      },
+      "analyst": {
+        "title": "Data Analyst",
+        "location": "Remote",
+        "type": "Contract"
+      },
+      "communications": {
+        "title": "Communications Officer",
+        "location": "Bhopal",
+        "type": "Full-time"
+      },
+      "medical": {
+        "title": "Medical Officer",
+        "location": "Shahdol",
+        "type": "Part-time"
+      }
+    },
+    "process": {
+      "eyebrow": "How to Apply",
+      "heading": "Application Process",
+      "step1": {
+        "title": "Find Your Role",
+        "description": "Browse our open positions and find the role that matches your skills and passion."
+      },
+      "step2": {
+        "title": "Submit Application",
+        "description": "Send your resume and cover letter to careers@kiranseva.org with the position title."
+      },
+      "step3": {
+        "title": "Interview Process",
+        "description": "Meet with our team to discuss your experience and learn more about our work."
+      },
+      "step4": {
+        "title": "Join the Team",
+        "description": "Complete onboarding and begin your journey of impact with Kiran Seva Sansthan."
+      }
+    },
+    "cta": {
+      "eyebrow": "Ready to Apply?",
+      "heading": "Start Your Journey with Us",
+      "body": "Don't see a perfect fit? We're always looking for passionate individuals. Send us your resume and tell us how you'd like to contribute.",
+      "button": "Contact Us"
+    }
+  },
+  "volunteer": {
+    "eyebrow": "Make a Difference",
+    "heading": "Volunteer with Kiran Seva Sansthan",
+    "subtitle": "Your time and skills can transform lives. Join our network of dedicated volunteers working towards a sickle cell-free Madhya Pradesh.",
+    "opportunities": {
+      "eyebrow": "Ways to Help",
+      "heading": "Volunteer Opportunities",
+      "medical": {
+        "title": "Medical Professional",
+        "description": "Conduct screenings, train health workers, and provide medical expertise at our camps in tribal districts."
+      },
+      "educator": {
+        "title": "Community Educator",
+        "description": "Run awareness campaigns, create educational materials, and teach communities about sickle cell prevention."
+      },
+      "translator": {
+        "title": "Translator",
+        "description": "Translate resources between Hindi, English, Baigani, and Gondi to ensure accessible healthcare information."
+      },
+      "fundraising": {
+        "title": "Fundraising Support",
+        "description": "Organize fundraising events, manage donor relations, and help us expand our reach to more communities."
+      },
+      "remote": {
+        "title": "Remote Volunteer",
+        "description": "Support data entry, social media, research, and communications from anywhere in the world."
+      }
+    },
+    "testimonials": {
+      "eyebrow": "Volunteer Stories",
+      "heading": "Hear from Our Volunteers",
+      "priya": {
+        "quote": "Volunteering with KSS showed me the real impact of healthcare outreach. The gratitude of tribal families is something I'll carry forever.",
+        "name": "Dr. Priya Sharma",
+        "role": "Medical Volunteer, Delhi"
+      },
+      "rajesh": {
+        "quote": "I contribute 5 hours a week from home managing their database. It's incredible how remote work can still change lives.",
+        "name": "Rajesh Kumar",
+        "role": "Remote Data Volunteer"
+      },
+      "anjali": {
+        "quote": "Teaching mothers in Dindori about sickle cell gave me purpose. These women are now the health champions of their villages.",
+        "name": "Anjali Gond",
+        "role": "Community Educator, Dindori"
+      }
+    },
+    "steps": {
+      "eyebrow": "Get Started",
+      "heading": "How to Join",
+      "step1": {
+        "title": "Fill Interest Form",
+        "description": "Tell us about your skills, availability, and how you'd like to contribute to our mission."
+      },
+      "step2": {
+        "title": "Attend Orientation",
+        "description": "Join our 2-hour virtual orientation to learn about sickle cell, our programs, and volunteer expectations."
+      },
+      "step3": {
+        "title": "Start Volunteering",
+        "description": "Choose your role, connect with our team, and begin making an impact in tribal communities."
+      }
+    },
+    "form": {
+      "eyebrow": "Express Your Interest",
+      "heading": "Volunteer Interest Form",
+      "name": "Full Name",
+      "namePlaceholder": "Enter your full name",
+      "email": "Email Address",
+      "emailPlaceholder": "you@example.com",
+      "phone": "Phone Number (Optional)",
+      "phonePlaceholder": "+91 00000 00000",
+      "interests": "Areas of Interest (Select all that apply)",
+      "medical": "Medical/Healthcare",
+      "educator": "Education/Awareness",
+      "translator": "Translation Services",
+      "fundraising": "Fundraising/Events",
+      "remote": "Remote/Administrative",
+      "message": "Tell Us About Yourself (Optional)",
+      "messagePlaceholder": "Share your background, skills, or why you want to volunteer with KSS...",
+      "submit": "Submit Interest Form",
+      "success": "Thank you for your interest! We'll contact you within 48 hours."
+    },
+    "cta": {
+      "eyebrow": "Every Hour Counts",
+      "heading": "Can't Volunteer? You Can Still Help",
+      "body": "Your donation helps us train volunteers, organize camps, and reach more tribal families across Madhya Pradesh.",
+      "button": "Support Our Work"
+    }
   }
 }

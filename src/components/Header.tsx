@@ -1,15 +1,23 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import BurgundyRibbon from "@/components/BurgundyRibbon";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { useLocalePath } from "@/hooks/useLocalePath";
 import { cn } from "@/lib/utils";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [getInvolvedOpen, setGetInvolvedOpen] = useState(false);
   const location = useLocation();
   const { t } = useTranslation();
   const { locale, localePath } = useLocalePath();
@@ -23,10 +31,10 @@ const Header = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const links = [
+  const regularLinks = [
     { label: t("nav.stories"), to: localePath("stories") },
     { label: t("nav.resources"), to: localePath("resources") },
-    { label: t("nav.donate"), to: localePath("donate") },
+    { label: t("nav.about"), to: localePath("about") },
   ];
 
   const isActive = (to: string) =>
@@ -58,7 +66,7 @@ const Header = () => {
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
-          {links.map((link) => (
+          {regularLinks.map((link) => (
             <Link
               key={link.to}
               to={link.to}
@@ -74,6 +82,62 @@ const Header = () => {
               {link.label}
             </Link>
           ))}
+          
+          {/* Get Involved Dropdown */}
+          <DropdownMenu modal={false}>
+            <DropdownMenuTrigger asChild>
+              <button
+                className={cn(
+                  "text-sm px-3.5 py-2 transition-colors duration-300 inline-flex items-center gap-1",
+                  transparent
+                    ? "text-parchment/85 hover:text-parchment"
+                    : "text-foreground/70 hover:text-foreground",
+                )}
+              >
+                {t("nav.getInvolved")}
+                <ChevronDown className="w-3.5 h-3.5" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" sideOffset={8} className="bg-parchment border-border/60 w-max max-w-[90vw]">
+              <DropdownMenuItem asChild>
+                <Link
+                  to={localePath("careers")}
+                  className={cn(
+                    "w-full cursor-pointer",
+                    isActive(localePath("careers")) ? "text-primary font-medium" : "text-foreground"
+                  )}
+                >
+                  {t("nav.careers")}
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link
+                  to={localePath("volunteer")}
+                  className={cn(
+                    "w-full cursor-pointer",
+                    isActive(localePath("volunteer")) ? "text-primary font-medium" : "text-foreground"
+                  )}
+                >
+                  {t("nav.volunteer")}
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+          
+          <Link
+            to={localePath("donate")}
+            className={cn(
+              "text-sm px-3.5 py-2 transition-colors duration-300",
+              transparent
+                ? "text-parchment/85 hover:text-parchment"
+                : isActive(localePath("donate"))
+                  ? "text-primary font-medium"
+                  : "text-foreground/70 hover:text-foreground",
+            )}
+          >
+            {t("nav.donate")}
+          </Link>
+          
           <div className="ml-3">
             <LanguageSwitcher variant={transparent ? "dark" : "light"} />
           </div>
@@ -97,7 +161,7 @@ const Header = () => {
 
       {mobileOpen && (
         <div className="lg:hidden bg-parchment border-t border-border px-6 py-6 flex flex-col gap-1">
-          {links.map((link) => (
+          {regularLinks.map((link) => (
             <Link
               key={link.to}
               to={link.to}
@@ -110,6 +174,73 @@ const Header = () => {
               {link.label}
             </Link>
           ))}
+          
+          {/* Get Involved - Mobile */}
+          <div className="border-b border-border/40">
+            <button
+              onClick={() => setGetInvolvedOpen((v) => !v)}
+              className="w-full text-base py-3 flex items-center justify-between text-foreground/80 hover:text-foreground transition-colors"
+              aria-expanded={getInvolvedOpen}
+              aria-label="Toggle Get Involved submenu"
+            >
+              <span>{t("nav.getInvolved")}</span>
+              <motion.div
+                animate={{ rotate: getInvolvedOpen ? 180 : 0 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+              >
+                <ChevronDown className="w-4 h-4" />
+              </motion.div>
+            </button>
+            <AnimatePresence>
+              {getInvolvedOpen && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <div className="pl-4 pb-3 flex flex-col gap-1">
+                    <Link
+                      to={localePath("careers")}
+                      onClick={() => setMobileOpen(false)}
+                      className={cn(
+                        "text-base py-2 px-2 rounded-lg transition-colors",
+                        isActive(localePath("careers")) 
+                          ? "text-primary font-medium bg-primary/5" 
+                          : "text-foreground/70 hover:text-foreground hover:bg-foreground/5",
+                      )}
+                    >
+                      {t("nav.careers")}
+                    </Link>
+                    <Link
+                      to={localePath("volunteer")}
+                      onClick={() => setMobileOpen(false)}
+                      className={cn(
+                        "text-base py-2 px-2 rounded-lg transition-colors",
+                        isActive(localePath("volunteer")) 
+                          ? "text-primary font-medium bg-primary/5" 
+                          : "text-foreground/70 hover:text-foreground hover:bg-foreground/5",
+                      )}
+                    >
+                      {t("nav.volunteer")}
+                    </Link>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+          
+          <Link
+            to={localePath("donate")}
+            onClick={() => setMobileOpen(false)}
+            className={cn(
+              "text-base py-3",
+              isActive(localePath("donate")) ? "text-primary font-medium" : "text-foreground/80",
+            )}
+          >
+            {t("nav.donate")}
+          </Link>
         </div>
       )}
     </header>
