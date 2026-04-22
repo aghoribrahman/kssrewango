@@ -66,6 +66,60 @@
       "sidhi": "09 Jun · Kusmi block headquarters"
     }
   },
+  "stories": {
+    "eyebrow": "Voices from the journal",
+    "heading": "The patients we walk beside.",
+    "subtitle": "Sickle Cell is not a statistic. It is a child missing school, a mother holding back fear, an elder who finally has a name for the pain. These are their journals.",
+    "ageYears": "years",
+    "read": "Read the journal entry",
+    "close": "Close",
+    "dignity": "Shared with consent. Names changed where requested.",
+    "contributeEyebrow": "Lend your voice",
+    "contributeHeading": "Have a story to share?",
+    "contributeBody": "If you or someone you love lives with sickle cell, your story can give courage to another family. Reach out to us — in Hindi or English — and we will listen.",
+    "items": {
+      "meena": {
+        "name": "Meena",
+        "alt": "Portrait of Meena, a young Baiga girl from Dindori",
+        "headline": "\"I want to finish school. The pain used to stop me. Now it doesn't.\"",
+        "body": [
+          "Meena was nine when the pain in her bones first kept her home from school for weeks at a time. Her mother thought it was the cold; her grandmother thought it was the spirits.",
+          "When our screening camp came to Bajag, a single drop of blood gave her family an answer they had waited five years for. With monthly hydroxyurea and a simple folic acid routine, the crises that once filled her childhood have shrunk to a dull echo.",
+          "Today she is in Class 9, top of her Hindi class, and dreams of becoming a teacher in her own village so no Baiga girl loses years to a question no one could answer."
+        ]
+      },
+      "ramesh": {
+        "name": "Ramesh",
+        "alt": "Portrait of Ramesh, an elder Gond man from Mandla",
+        "headline": "\"For fifty years I thought this pain was my karma. It was a disease.\"",
+        "body": [
+          "Ramesh is fifty-two. He has worked the forests around Bichhiya since he was a boy. The joint pain came every winter, sometimes so severe he could not lift the axe.",
+          "He never knew the name for it. The block hospital had no test, the city was too far. When our camp arrived in 2023, his diagnosis came with both grief and relief — grief for the years lost, relief that his grandchildren could be tested early.",
+          "Both his grandchildren are now carriers, not patients. \"My pain,\" he says, \"will not be theirs.\""
+        ]
+      },
+      "savitri": {
+        "name": "Savitri",
+        "alt": "Portrait of Savitri holding her young child",
+        "headline": "\"They told me my baby would not live. She is six now.\"",
+        "body": [
+          "Savitri's first child was diagnosed with sickle cell at four months. The district hospital, kindly but exhausted, told her to be ready for the worst.",
+          "Through our care coordinator in Anuppur, she learnt the warning signs of a crisis, the importance of hydration, and the small daily medicines that change everything.",
+          "Her daughter is six. She runs, she draws, she fights with her brother over the last roti. Savitri now counsels other young mothers in her village — in Baigani, Hindi, and quiet, certain love."
+        ]
+      },
+      "arjun": {
+        "name": "Arjun",
+        "alt": "Portrait of Arjun, a young schoolboy from Shahdol",
+        "headline": "\"My friend has the same as me. We are not alone anymore.\"",
+        "body": [
+          "Arjun was screened at his school in Beohari at the age of seven. So was his classmate, Rohit. Both turned out to have sickle cell disease.",
+          "What could have been a heavy burden became a small, brave brotherhood. Their teacher learnt to spot the early signs of a crisis. Their parents joined the same WhatsApp group of carers.",
+          "Today, at nine, Arjun is the unofficial spokesperson of the school's monthly health circle — translating English pamphlets into the warmest, most matter-of-fact Hindi you've ever heard."
+        ]
+      }
+    }
+  },
   "footer": {
     "tagline": "A Sickle Cell Disease initiative for tribal Madhya Pradesh.",
     "rights": "All rights reserved."
