@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { ArrowUpRight, X } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import GondPattern from "@/components/GondPattern";
-import BurgundyRibbon from "@/components/BurgundyRibbon";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import GondPattern from "@/components/shared/GondPattern";
+import BurgundyRibbon from "@/components/shared/BurgundyRibbon";
 import { STORIES, type Story } from "@/data/stories";
 import { cn } from "@/lib/utils";
 
@@ -24,7 +24,7 @@ const StoryCard = ({
     <article
       className={cn(
         "group relative animate-fade-up",
-        isFeatured ? "md:col-span-2 md:row-span-2" : "",
+        isFeatured ? "sm:col-span-2 sm:row-span-2 md:col-span-2 md:row-span-2" : "",
       )}
       style={{ animationDelay: `${index * 80}ms` }}
     >
@@ -36,7 +36,7 @@ const StoryCard = ({
         <div
           className={cn(
             "relative overflow-hidden rounded-2xl bg-parchment-deep",
-            isFeatured ? "aspect-[4/5] md:aspect-[5/6]" : "aspect-[4/5]",
+            isFeatured ? "aspect-[4/5] sm:aspect-[5/6] md:aspect-[5/6]" : "aspect-[4/5]",
           )}
         >
           <img
@@ -51,11 +51,11 @@ const StoryCard = ({
             aria-hidden="true"
             className="absolute inset-0 bg-gradient-to-t from-earth-ink/85 via-earth-ink/20 to-transparent"
           />
-          <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-parchment/90 text-foreground text-xs tracking-wide">
+          <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-parchment/90 text-foreground text-xs sm:text-xs md:text-sm tracking-wide">
             <span className="w-1.5 h-1.5 rounded-full bg-primary" />
             {story.district}
           </div>
-          <div className="absolute bottom-0 left-0 right-0 p-5 md:p-7 text-parchment">
+          <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6 lg:p-7 text-parchment">
             <p className="text-xs uppercase tracking-[0.25em] text-amber-warm/90 mb-3">
               {t(`stories.items.${story.id}.name`)} ·{" "}
               <span>
@@ -65,12 +65,12 @@ const StoryCard = ({
             <h3
               className={cn(
                 "font-serif leading-tight",
-                isFeatured ? "text-3xl md:text-5xl" : "text-xl md:text-2xl",
+                isFeatured ? "text-2xl sm:text-3xl md:text-4xl lg:text-5xl" : "text-lg sm:text-xl md:text-xl lg:text-2xl",
               )}
             >
               {t(`stories.items.${story.id}.headline`)}
             </h3>
-            <div className="mt-4 inline-flex items-center gap-2 text-sm text-parchment/85 group-hover:text-amber-warm transition-colors">
+            <div className="mt-4 inline-flex items-center gap-2 text-xs sm:text-sm md:text-base text-parchment/85 group-hover:text-amber-warm transition-colors">
               {t("stories.read")}
               <ArrowUpRight className="w-4 h-4" />
             </div>
@@ -95,11 +95,11 @@ const StoryDialog = ({
       role="dialog"
       aria-modal="true"
       aria-labelledby="story-dialog-title"
-      className="fixed inset-0 z-[60] flex items-stretch md:items-center justify-center bg-earth-ink/80 backdrop-blur-sm p-0 md:p-6"
+      className="fixed inset-0 z-[60] flex items-stretch md:items-center justify-center bg-earth-ink/80 backdrop-blur-sm p-0 sm:p-4 md:p-6"
       onClick={onClose}
     >
       <div
-        className="relative bg-parchment w-full max-w-4xl md:rounded-2xl overflow-hidden grid md:grid-cols-2 max-h-screen md:max-h-[90vh]"
+        className="relative bg-parchment w-full max-w-4xl rounded-none sm:rounded-lg md:rounded-2xl grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-0 max-h-[95vh] md:max-h-[90vh] overflow-y-auto md:overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -111,7 +111,7 @@ const StoryDialog = ({
           <X className="w-5 h-5" />
         </button>
 
-        <div className="relative aspect-[4/5] md:aspect-auto md:h-full">
+        <div className="relative aspect-[4/5] sm:aspect-[3/4] md:aspect-auto md:h-full">
           <img
             src={story.image}
             alt={t(`stories.items.${story.id}.alt`)}
@@ -121,17 +121,17 @@ const StoryDialog = ({
           />
         </div>
 
-        <div className="p-7 md:p-10 overflow-y-auto">
+        <div className="p-4 sm:p-6 md:p-8 lg:p-10 md:overflow-y-auto">
           <p className="text-xs uppercase tracking-[0.3em] text-primary mb-3">
             {story.district} · {story.age} {t(story.ageLabelKey)}
           </p>
           <h2
             id="story-dialog-title"
-            className="font-serif text-3xl md:text-4xl text-foreground leading-tight mb-5"
+            className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-foreground leading-tight mb-5"
           >
             {t(`stories.items.${story.id}.headline`)}
           </h2>
-          <div className="space-y-4 text-foreground/75 leading-relaxed text-base">
+          <div className="space-y-4 text-foreground/75 leading-relaxed text-sm sm:text-base md:text-base">
             {(t(`stories.items.${story.id}.body`, { returnObjects: true }) as string[]).map(
               (para, i) => (
                 <p key={i}>{para}</p>
@@ -175,7 +175,7 @@ const Stories = () => {
 
         <section className="px-6 md:px-10 pb-24">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-7 auto-rows-fr">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-6 md:gap-7 auto-rows-fr">
               {STORIES.map((story, i) => (
                 <StoryCard key={story.id} story={story} index={i} onOpen={setOpenId} />
               ))}

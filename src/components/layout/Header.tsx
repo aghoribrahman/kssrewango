@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, HeartPulse } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import BurgundyRibbon from "@/components/BurgundyRibbon";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
+import LanguageSwitcher from "./LanguageSwitcher";
 import { useLocalePath } from "@/hooks/useLocalePath";
 import { cn } from "@/lib/utils";
 import {
@@ -55,11 +54,11 @@ const Header = () => {
         <Link
           to={localePath()}
           className={cn(
-            "flex items-center gap-2.5 transition-colors",
+            "flex items-center gap-2 transition-colors",
             transparent ? "text-parchment" : "text-foreground",
           )}
         >
-          <BurgundyRibbon className="w-5 h-6 shrink-0" />
+          <HeartPulse className={cn("w-6 h-6 shrink-0", transparent ? "text-amber-warm" : "text-primary")} />
           <span className="text-sm md:text-base font-serif leading-tight">
             {t("org.name")}
           </span>
@@ -82,7 +81,7 @@ const Header = () => {
               {link.label}
             </Link>
           ))}
-          
+
           {/* Get Involved Dropdown */}
           <DropdownMenu modal={false}>
             <DropdownMenuTrigger asChild>
@@ -123,7 +122,7 @@ const Header = () => {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-          
+
           <Link
             to={localePath("donate")}
             className={cn(
@@ -137,7 +136,7 @@ const Header = () => {
           >
             {t("nav.donate")}
           </Link>
-          
+
           <div className="ml-3">
             <LanguageSwitcher variant={transparent ? "dark" : "light"} />
           </div>
@@ -174,7 +173,7 @@ const Header = () => {
               {link.label}
             </Link>
           ))}
-          
+
           {/* Get Involved - Mobile */}
           <div className="border-b border-border/40">
             <button
@@ -206,8 +205,8 @@ const Header = () => {
                       onClick={() => setMobileOpen(false)}
                       className={cn(
                         "text-base py-2 px-2 rounded-lg transition-colors",
-                        isActive(localePath("careers")) 
-                          ? "text-primary font-medium bg-primary/5" 
+                        isActive(localePath("careers"))
+                          ? "text-primary font-medium bg-primary/5"
                           : "text-foreground/70 hover:text-foreground hover:bg-foreground/5",
                       )}
                     >
@@ -218,8 +217,8 @@ const Header = () => {
                       onClick={() => setMobileOpen(false)}
                       className={cn(
                         "text-base py-2 px-2 rounded-lg transition-colors",
-                        isActive(localePath("volunteer")) 
-                          ? "text-primary font-medium bg-primary/5" 
+                        isActive(localePath("volunteer"))
+                          ? "text-primary font-medium bg-primary/5"
                           : "text-foreground/70 hover:text-foreground hover:bg-foreground/5",
                       )}
                     >
@@ -230,7 +229,7 @@ const Header = () => {
               )}
             </AnimatePresence>
           </div>
-          
+
           <Link
             to={localePath("donate")}
             onClick={() => setMobileOpen(false)}

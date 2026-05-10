@@ -2,9 +2,9 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, Globe, Filter } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import GondPattern from "@/components/GondPattern";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import GondPattern from "@/components/shared/GondPattern";
 import ResourceCard from "@/components/ResourceCard";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -80,7 +80,7 @@ const Resources = () => {
             <Filter className="w-4 h-4 text-terracotta shrink-0" />
             <Tabs defaultValue="all" className="w-auto" onValueChange={setCategoryFilter}>
               <TabsList className="bg-transparent h-auto p-0 gap-2">
-                {["all", "prevention", "care", "nutrition", "rights"].map((cat) => (
+                {["all", "prevention", "care", "nutrition", "tb", "rights"].map((cat) => (
                   <TabsTrigger 
                     key={cat} 
                     value={cat}

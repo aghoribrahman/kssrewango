@@ -2,7 +2,7 @@ export interface Resource {
   id: string;
   title: string;
   description: string;
-  category: "prevention" | "care" | "nutrition" | "rights";
+  category: "prevention" | "care" | "nutrition" | "rights" | "tb";
   language: "hi" | "en";
   downloadUrl: string;
   summary: string;
@@ -30,7 +30,7 @@ export const resources: Resource[] = [
   {
     id: "3",
     title: "पोषण मार्गदर्शिका",
-    description: "सिकल सेल रोगियों के लिए स्वस्थ आहार और पोषण संबंधी सुझाव।",
+    description: "सिकल सेल और टीबी रोगियों के लिए स्वस्थ आहार और पोषण संबंधी सुझाव।",
     category: "nutrition",
     language: "hi",
     downloadUrl: "#",
@@ -39,7 +39,7 @@ export const resources: Resource[] = [
   {
     id: "4",
     title: "Nutrition Guide",
-    description: "Healthy diet and nutritional tips for Sickle Cell patients.",
+    description: "Healthy diet and nutritional tips for Sickle Cell and TB patients.",
     category: "nutrition",
     language: "en",
     downloadUrl: "#",
@@ -71,5 +71,23 @@ export const resources: Resource[] = [
     language: "hi",
     downloadUrl: "#",
     summary: "दिव्यांगता प्रमाण पत्र और मुफ्त इलाज की सरकारी योजनाओं के बारे में जानकारी।"
+  },
+  {
+    id: "8",
+    title: "टीबी देखभाल मार्गदर्शिका",
+    description: "टीबी के लक्षणों, उपचार और डॉट्स (DOTS) के महत्व को समझने के लिए गाइड।",
+    category: "tb",
+    language: "hi",
+    downloadUrl: "#",
+    summary: "नियमित दवा, स्वच्छता और रिकवरी के दौरान पोषण के महत्व पर केंद्रित।"
+  },
+  {
+    id: "9",
+    title: "TB Care Guide",
+    description: "Understanding TB symptoms, treatment, and the importance of DOTS.",
+    category: "tb",
+    language: "en",
+    downloadUrl: "#",
+    summary: "Focuses on medication adherence, hygiene, and nutrition during recovery."
   }
 ];

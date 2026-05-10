@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import CountUp from "@/components/CountUp";
-import GondPattern from "@/components/GondPattern";
+import GondPattern from "@/components/shared/GondPattern";
 
 interface Stat {
   value: number;

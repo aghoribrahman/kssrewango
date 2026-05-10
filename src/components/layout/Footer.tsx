@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import BurgundyRibbon from "@/components/BurgundyRibbon";
+import BurgundyRibbon from "../shared/BurgundyRibbon";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -38,7 +38,7 @@ const Footer = () => {
       <div className="border-t border-parchment/10">
         <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between gap-2 text-[10px] text-parchment/50">
           <span>© {year} {t("org.name")}. {t("footer.rights")}</span>
-          <span>Made with care for tribal Madhya Pradesh.</span>
+          <span>Made with care for the communities of Madhya Pradesh.</span>
         </div>
       </div>
     </footer>

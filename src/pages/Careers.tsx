@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { Heart, Briefcase, GraduationCap, Users, MapPin, Clock, ArrowRight, Mail } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import GondPattern from "@/components/GondPattern";
-import BurgundyRibbon from "@/components/BurgundyRibbon";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import GondPattern from "@/components/shared/GondPattern";
+import BurgundyRibbon from "@/components/shared/BurgundyRibbon";
 import { useLocalePath } from "@/hooks/useLocalePath";
 import { Link } from "react-router-dom";
 

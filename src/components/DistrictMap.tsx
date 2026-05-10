@@ -12,7 +12,7 @@ interface District {
 }
 
 /**
- * Stylised outline of Madhya Pradesh + the six focus tribal districts.
+ * Stylised outline of Madhya Pradesh + the six focus districts.
  * Coordinates are deliberately schematic (not GIS-accurate) so the map reads
  * cleanly as an editorial illustration. Districts cluster in the eastern
  * "Shahdol division" region of the state.

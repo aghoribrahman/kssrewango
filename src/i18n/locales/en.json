@@ -15,35 +15,49 @@
     "hindi": "हिंदी"
   },
   "home": {
-    "tagline": "Sickle Cell Awareness · Madhya Pradesh",
-    "missionLine1": "Towards a",
-    "missionLine2": "Sickle Cell-free",
+    "tagline": "Healing · Nourishing · Empowering",
+    "missionLine1": "Building a",
+    "missionLine2": "Healthier & Stronger",
     "missionLine3": "Madhya Pradesh",
-    "subtitle": "Walking with the Baiga and Gond communities of Anuppur, Dindori, Mandla, Shahdol, Umaria and Sidhi — through screenings, care and dignity.",
+    "subtitle": "Bridging the gap in rural healthcare through specialized programs for genetic health, infectious diseases, and nutritional security.",
     "cta": {
-      "donate": "Support a screening",
+      "donate": "Support our mission",
       "learn": "Our work"
+    },
+    "pillars": {
+      "sickle": {
+        "title": "Sickle Cell Care",
+        "description": "Screening, counselling, and hydroxyurea support for genetic health."
+      },
+      "tb": {
+        "title": "TB Management",
+        "description": "Early detection, DOTS supervision, and nutritional linkage for TB recovery."
+      },
+      "nutrition": {
+        "title": "Nutrition & Growth",
+        "description": "Malnutrition screening and dietary support for children and mothers."
+      }
     }
   },
   "impact": {
     "eyebrow": "Our impact, in numbers",
     "heading": "Every number is a family that no longer fights alone.",
-    "subtitle": "From village haats to district hospitals, our teams have travelled deep into tribal Madhya Pradesh to screen, counsel and care.",
+    "subtitle": "From village haats to district hospitals, our teams have travelled deep into rural Madhya Pradesh to screen, counsel and care.",
     "screenings": {
-      "label": "Screenings done",
-      "helper": "Across schools, anganwadis and gram sabhas."
+      "label": "Health Screenings",
+      "helper": "Sickle cell, TB, and malnutrition checks."
     },
     "lives": {
-      "label": "Lives impacted",
-      "helper": "Patients, parents and carriers supported."
+      "label": "Families Supported",
+      "helper": "Patients and caregivers across three pillars."
     },
     "districts": {
-      "label": "Tribal districts",
-      "helper": "Focus belt across eastern MP."
+      "label": "Focus Districts",
+      "helper": "Focused care belt in eastern MP."
     },
     "camps": {
-      "label": "Awareness camps",
-      "helper": "Run alongside ASHA & ANM workers."
+      "label": "Integrated Camps",
+      "helper": "Multi-service health outreach in remote areas."
     }
   },
   "map": {
@@ -52,7 +66,7 @@
     "subtitle": "Hover or tap a district to see when our next screening camp arrives.",
     "activeLabel": "Currently viewing",
     "nextCamp": "Next screening camp",
-    "cta": "Local ASHA workers and tribal community leaders co-host every camp.",
+    "cta": "Local ASHA workers and community leaders co-host every camp.",
     "districts": {
       "anuppur": "Anuppur",
       "dindori": "Dindori",
@@ -66,7 +80,7 @@
       "dindori": "18 May · Bajag Gram Sabha",
       "mandla": "24 May · Bichhiya Block Hospital",
       "shahdol": "29 May · Beohari PHC",
-      "umaria": "04 Jun · Manpur tribal school",
+      "umaria": "04 Jun · Manpur community school",
       "sidhi": "09 Jun · Kusmi block headquarters"
     }
   },
@@ -124,14 +138,41 @@
       }
     }
   },
+  "programs": {
+    "heading": "Programs & Impact",
+    "subtitle": "Discover how Kiran Seva Sansthan is transforming lives through comprehensive healthcare, awareness initiatives, and patient support systems in rural Madhya Pradesh.",
+    "learnMore": "Learn more",
+    "items": {
+      "screening": {
+        "title": "Mobile Screening Camps",
+        "description": "Our mobile units reach the most remote villages to provide diagnostic services and early detection for genetic blood disorders."
+      },
+      "nutrition": {
+        "title": "Nutritional Excellence",
+        "description": "Providing balanced meal plans and therapeutic food to help patients maintain strength and manage chronic conditions effectively."
+      },
+      "education": {
+        "title": "Health Education",
+        "description": "Workshops and community gatherings aimed at breaking stigmas and educating families on preventive healthcare measures."
+      },
+      "support": {
+        "title": "Patient Advocacy",
+        "description": "Navigating the healthcare system with patients, ensuring they receive the care and legal rights they deserve."
+      },
+      "volunteer": {
+        "title": "Volunteer Network",
+        "description": "Join a growing community of dedicated volunteers working on the front lines to deliver care and hope to every doorstep."
+      }
+    }
+  },
   "footer": {
-    "tagline": "A Sickle Cell Disease initiative for tribal Madhya Pradesh.",
+    "tagline": "A Community Health & Nutrition initiative for Madhya Pradesh.",
     "rights": "All rights reserved."
   },
   "donation": {
     "eyebrow": "Your support, their breath",
     "heading": "Support the journey",
-    "subtitle": "Your contribution brings screening, care, and dignity to the tribal heartlands of Madhya Pradesh.",
+    "subtitle": "Your contribution brings screening, care, and dignity to the heartlands of Madhya Pradesh.",
     "impact": {
       "t1": {
         "amount": "₹500",
@@ -180,6 +221,7 @@
         "prevention": "Prevention",
         "care": "Daily Care",
         "nutrition": "Nutrition",
+        "tb": "TB Care",
         "rights": "Patient Rights"
       }
     },
@@ -196,20 +238,20 @@
   "about": {
     "eyebrow": "About Kiran Seva Sansthan",
     "heading": "Our Story, Our Promise",
-    "subtitle": "Born from the belief that no family should fight sickle cell alone, we walk alongside tribal communities in Madhya Pradesh — bringing screening, care, and dignity to every village.",
+    "subtitle": "Born from the belief that healthcare should reach the last mile, we walk alongside the communities of Madhya Pradesh — bringing sickle cell care, TB management, and nutritional dignity to every village.",
     "story": {
       "eyebrow": "Our Journey",
       "heading": "How We Started",
       "paragraphs": [
-        "In 2023, a small team of health workers and community volunteers gathered in Anuppur with a simple question: why were so many tribal families living with undiagnosed sickle cell disease?",
-        "The answer led us deeper — into remote villages where healthcare was a day's journey away, where the pain was called 'karma' instead of a treatable condition, where children missed school and elders suffered in silence.",
-        "We started with one screening camp in Bajag. Then another in Bichhiya. Word spread through word-of-mouth, through ASHA workers who saw the difference early diagnosis made, through parents who finally had answers.",
-        "Today, Kiran Seva Sansthan works across six tribal districts of Madhya Pradesh — Anuppur, Dindori, Mandla, Shahdol, Umaria, and Sidhi. We have conducted over 240 camps, screened more than 50,000 individuals, and touched the lives of over 12,000 families.",
+        "In 2023, a small team of health workers and community volunteers gathered in Anuppur with a simple question: why were so many families living with undiagnosed health conditions?",
+        "The answer led us deeper — into remote villages where healthcare was a day's journey away, where pain was often misunderstood, where children missed school and elders suffered in silence.",
+        "We started with one screening camp. Then another. Word spread through word-of-mouth, through ASHA workers who saw the difference early diagnosis made, through parents who finally had answers.",
+        "Today, Kiran Seva Sansthan works across six focus districts of Madhya Pradesh — Anuppur, Dindori, Mandla, Shahdol, Umaria, and Sidhi. We have conducted over 240 camps, screened more than 50,000 individuals, and touched the lives of over 12,000 families.",
         "But numbers don't tell the full story. What matters is the child who can now attend school without pain. The mother who knows how to protect her baby. The elder who finally understands that the pain was never their fault."
       ],
       "foundedLabel": "Founded",
       "districtsLabel": "Districts Served",
-      "districts": "6 Tribal Districts",
+      "districts": "6 Focus Districts",
       "campsLabel": "Screening Camps",
       "camps": "240+ and Growing",
       "screeningsLabel": "Lives Screened",
@@ -225,11 +267,11 @@
         },
         "awareness": {
           "title": "Community Awareness",
-          "description": "Education in local languages — Hindi, Baigani, and Gondi — so every family understands sickle cell, from symptoms to prevention to treatment options."
+          "description": "Education in local languages and dialects — so every family understands their health options, from symptoms to prevention to treatment."
         },
         "dignity": {
           "title": "Dignity & Respect",
-          "description": "We honor Baiga and Gond traditions, work with consent, and ensure every story is shared with dignity. Healthcare is not just medicine — it's humanity."
+          "description": "We honor local traditions, work with consent, and ensure every story is shared with dignity. Healthcare is not just medicine — it's humanity."
         }
       }
     },
@@ -239,7 +281,7 @@
       "items": {
         "community": {
           "title": "Community-Led Approach",
-          "description": "We don't work for tribal communities — we work with them. Every camp is co-hosted with local ASHA workers, tribal leaders, and village health committees. The community knows what it needs; we bring the tools and support to make it happen."
+          "description": "We don't work for communities — we work with them. Every camp is co-hosted with local ASHA workers, community leaders, and village health committees. The community knows what it needs; we bring the tools and support to make it happen."
         },
         "transparency": {
           "title": "Radical Transparency",
@@ -262,7 +304,7 @@
   "careers": {
     "eyebrow": "Join Our Team",
     "heading": "Build a Career with Purpose",
-    "subtitle": "Work alongside tribal communities in Madhya Pradesh to create lasting change. Every day at KSS is an opportunity to impact lives and build a healthier future.",
+    "subtitle": "Work alongside local communities in Madhya Pradesh to create lasting change. Every day at KSS is an opportunity to impact lives and build a healthier future.",
     "benefits": {
       "eyebrow": "Why Work With Us",
       "heading": "More Than Just a Job",
@@ -280,7 +322,7 @@
       },
       "culture": {
         "title": "Cultural Immersion",
-        "description": "Experience the rich traditions of tribal Madhya Pradesh while contributing to meaningful healthcare initiatives."
+        "description": "Experience the rich traditions of rural Madhya Pradesh while contributing to meaningful healthcare initiatives."
       }
     },
     "positions": {
@@ -349,7 +391,7 @@
       "heading": "Volunteer Opportunities",
       "medical": {
         "title": "Medical Professional",
-        "description": "Conduct screenings, train health workers, and provide medical expertise at our camps in tribal districts."
+        "description": "Conduct screenings, train health workers, and provide medical expertise at our camps in focus districts."
       },
       "educator": {
         "title": "Community Educator",
@@ -372,7 +414,7 @@
       "eyebrow": "Volunteer Stories",
       "heading": "Hear from Our Volunteers",
       "priya": {
-        "quote": "Volunteering with KSS showed me the real impact of healthcare outreach. The gratitude of tribal families is something I'll carry forever.",
+        "quote": "Volunteering with KSS showed me the real impact of healthcare outreach. The gratitude of local families is something I'll carry forever.",
         "name": "Dr. Priya Sharma",
         "role": "Medical Volunteer, Delhi"
       },
@@ -400,7 +442,7 @@
       },
       "step3": {
         "title": "Start Volunteering",
-        "description": "Choose your role, connect with our team, and begin making an impact in tribal communities."
+        "description": "Choose your role, connect with our team, and begin making an impact in local communities."
       }
     },
     "form": {
@@ -426,7 +468,7 @@
     "cta": {
       "eyebrow": "Every Hour Counts",
       "heading": "Can't Volunteer? You Can Still Help",
-      "body": "Your donation helps us train volunteers, organize camps, and reach more tribal families across Madhya Pradesh.",
+      "body": "Your donation helps us train volunteers, organize camps, and reach more families across Madhya Pradesh.",
       "button": "Support Our Work"
     }
   }

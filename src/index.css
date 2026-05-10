@@ -48,7 +48,9 @@
     --parchment: 36 38% 96%;
     --parchment-deep: 32 30% 90%;
     --earth-ink: 20 35% 12%;
-    --ribbon: 348 55% 32%;            /* burgundy awareness ribbon */
+    --ribbon: 348 55% 32%;            /* sickle cell awareness */
+    --tb: 198 65% 45%;                /* deep medical blue for TB */
+    --nutrition: 84 55% 42%;          /* healthy green for nutrition */
 
     --sidebar-background: 152 50% 14%;
     --sidebar-foreground: 36 38% 96%;
