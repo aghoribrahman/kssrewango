@@ -37,11 +37,11 @@ const Gallery = () => {
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 auto-rows-fr">
               {GALLERY_ITEMS.map((item, i) => (
-                <StoryCard 
-                  key={item.id} 
-                  story={item} 
-                  index={i} 
-                  onOpen={setOpenId} 
+                <StoryCard
+                  key={item.id}
+                  story={item}
+                  index={i}
+                  onOpen={setOpenId}
                   translationBase="gallery"
                 />
               ))}
@@ -50,9 +50,9 @@ const Gallery = () => {
         </section>
       </main>
       <Footer />
-      <StoryDialog 
-        story={openStory} 
-        onClose={() => setOpenId(null)} 
+      <StoryDialog
+        story={openStory}
+        onClose={() => setOpenId(null)}
         translationBase="gallery"
       />
     </>

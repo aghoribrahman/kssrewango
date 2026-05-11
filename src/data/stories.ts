@@ -1,7 +1,7 @@
-import storyMeena from "@/assets/story-meena.jpg";
-import storyRamesh from "@/assets/story-ramesh.jpg";
-import storySavitri from "@/assets/story-savitri.jpg";
-import storyArjun from "@/assets/story-arjun.jpg";
+import storyMeena from "@/assets/story-meena.webp";
+import storyRamesh from "@/assets/story-ramesh.webp";
+import storySavitri from "@/assets/story-savitri.webp";
+import storyArjun from "@/assets/story-arjun.webp";
 
 export interface Story {
   id: string;

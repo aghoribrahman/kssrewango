@@ -50,7 +50,7 @@ const StoryCard = ({ story, index, onOpen, translationBase = "stories" }: StoryC
             aria-hidden="true"
             className="absolute inset-0 bg-gradient-to-t from-earth-ink/85 via-earth-ink/20 to-transparent"
           />
-          
+
           {story.district && (
             <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-parchment/90 text-foreground text-xs sm:text-xs md:text-sm tracking-wide">
               <span className="w-1.5 h-1.5 rounded-full bg-primary" />
