@@ -28,33 +28,20 @@ const PageLoader = () => (
   </div>
 );
 
-const App = () => {
-  const [shouldDie, setShouldDie] = React.useState(false);
-  
-  if (shouldDie) {
-    throw new Error("ROOT LEVEL CRASH");
-  }
-
-  return (
-    <ErrorBoundary variant="full-page">
-      <QueryClientProvider client={queryClient}>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter
-            future={{
-              v7_startTransition: true,
-              v7_relativeSplatPath: true,
-            }}
-          >
-            <Suspense fallback={<PageLoader />}>
-              <button 
-                onClick={() => setShouldDie(true)} 
-                className="fixed bottom-4 right-4 z-50 bg-red-500 text-white p-2 rounded text-xs opacity-20 hover:opacity-100"
-              >
-                Kill App
-              </button>
-              <Routes>
+const App = () => (
+  <ErrorBoundary variant="full-page">
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter
+          future={{
+            v7_startTransition: true,
+            v7_relativeSplatPath: true,
+          }}
+        >
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
               <Route path="/" element={<RootLocaleRedirect />} />
               <Route
                 path="/:lang"
