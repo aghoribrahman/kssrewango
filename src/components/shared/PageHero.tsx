@@ -28,7 +28,7 @@ const PageHero = ({ eyebrow, heading, subtitle, isHindi }: PageHeroProps) => (
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className={`font-serif text-5xl md:text-7xl lg:text-[5.5rem] text-foreground leading-[1.02] max-w-5xl ${isHindi ? "leading-[1.1]" : ""}`}
+        className={`font-serif text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] text-foreground leading-[1.1] sm:leading-[1.02] max-w-5xl ${isHindi ? "leading-[1.2] sm:leading-[1.1]" : ""}`}
       >
         {heading}
       </motion.h1>

@@ -1,17 +1,15 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { motion, AnimatePresence } from "framer-motion";
-import { Search, Globe, Filter } from "lucide-react";
+import { motion } from "framer-motion";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import GondPattern from "@/components/shared/GondPattern";
-import ResourceCard from "@/components/ResourceCard";
-import { Input } from "@/components/ui/input";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { resources } from "@/data/resources";
+import ResourceFilters from "@/features/resources/components/ResourceFilters";
+import ResourceGrid from "@/features/resources/components/ResourceGrid";
 
 const Resources = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState("");
   const [langFilter, setLangFilter] = useState<"all" | "hi" | "en">("all");
   const [categoryFilter, setCategoryFilter] = useState("all");
@@ -51,75 +49,14 @@ const Resources = () => {
           </motion.div>
         </section>
 
-        {/* Filters & Search */}
-        <section className="mb-12 space-y-6">
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
-            <div className="relative w-full md:max-w-md">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-foreground/40" />
-              <Input
-                placeholder={t("resources.search")}
-                className="pl-10 bg-white/60 border-border/40 focus:ring-forest/20"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-            </div>
-            
-            <div className="flex items-center gap-3 w-full md:w-auto overflow-x-auto pb-2 md:pb-0">
-              <Globe className="w-4 h-4 text-forest hidden md:block" />
-              <Tabs defaultValue="all" className="w-full md:w-auto" onValueChange={(v) => setLangFilter(v as any)}>
-                <TabsList className="bg-white/60 border border-border/40">
-                  <TabsTrigger value="all" className="text-xs">{t("resources.filter.all")}</TabsTrigger>
-                  <TabsTrigger value="hi" className="text-xs">{t("resources.filter.hindi")}</TabsTrigger>
-                  <TabsTrigger value="en" className="text-xs">{t("resources.filter.english")}</TabsTrigger>
-                </TabsList>
-              </Tabs>
-            </div>
-          </div>
+        <ResourceFilters
+          searchQuery={searchQuery}
+          onSearchChange={setSearchQuery}
+          onLangFilterChange={setLangFilter}
+          onCategoryFilterChange={setCategoryFilter}
+        />
 
-          <div className="flex items-center gap-4 border-t border-border/20 pt-6 overflow-x-auto no-scrollbar">
-            <Filter className="w-4 h-4 text-terracotta shrink-0" />
-            <Tabs defaultValue="all" className="w-auto" onValueChange={setCategoryFilter}>
-              <TabsList className="bg-transparent h-auto p-0 gap-2">
-                {["all", "prevention", "care", "nutrition", "tb", "rights"].map((cat) => (
-                  <TabsTrigger 
-                    key={cat} 
-                    value={cat}
-                    className="data-[state=active]:bg-primary data-[state=active]:text-parchment border border-border/40 px-4 py-1.5 rounded-full text-xs font-medium transition-all"
-                  >
-                    {t(`resources.filter.categories.${cat}`)}
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-            </Tabs>
-          </div>
-        </section>
-
-        {/* Resource Grid */}
-        <AnimatePresence mode="popLayout">
-          <motion.div 
-            layout
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
-            {filteredResources.map((res) => (
-              <motion.div
-                key={res.id}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.3 }}
-              >
-                <ResourceCard resource={res} />
-              </motion.div>
-            ))}
-          </motion.div>
-        </AnimatePresence>
-
-        {filteredResources.length === 0 && (
-          <div className="text-center py-20 opacity-50">
-            <p className="text-lg">No resources found matching your filters.</p>
-          </div>
-        )}
+        <ResourceGrid resources={filteredResources} />
       </main>
 
       <Footer />

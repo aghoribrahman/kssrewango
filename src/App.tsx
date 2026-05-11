@@ -5,41 +5,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LocaleProvider, RootLocaleRedirect } from "@/i18n/LocaleProvider";
-
-// Error Boundary for robust error handling
-class ErrorBoundary extends React.Component<{ children: React.ReactNode }, { hasError: boolean }> {
-  constructor(props: { children: React.ReactNode }) {
-    super(props);
-    this.state = { hasError: false };
-  }
-
-  static getDerivedStateFromError() {
-    return { hasError: true };
-  }
-
-  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    console.error("Uncaught error:", error, errorInfo);
-  }
-
-  render() {
-    if (this.state.hasError) {
-      return (
-        <div className="min-h-screen bg-parchment flex flex-col items-center justify-center p-6 text-center">
-          <h2 className="font-serif text-3xl text-foreground mb-4">Something went wrong.</h2>
-          <p className="text-foreground/60 mb-8">The application encountered an unexpected error.</p>
-          <button
-            onClick={() => window.location.reload()}
-            className="bg-primary text-primary-foreground px-6 py-2 rounded-full hover:bg-terracotta-deep transition-colors"
-          >
-            Reload Page
-          </button>
-        </div>
-      );
-    }
-
-    return this.props.children;
-  }
-}
+import ErrorBoundary from "@/components/shared/ErrorBoundary";
 
 // Lazy load pages for better performance
 const Index = lazy(() => import("./pages/Index"));
@@ -49,6 +15,9 @@ const About = lazy(() => import("./pages/About"));
 const Careers = lazy(() => import("./pages/Careers"));
 const Volunteer = lazy(() => import("./pages/Volunteer"));
 const Donation = lazy(() => import("./pages/Donation"));
+const SickleCell = lazy(() => import("./pages/SickleCell"));
+const TBManagement = lazy(() => import("./pages/TBManagement"));
+const NutritionGrowth = lazy(() => import("./pages/NutritionGrowth"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -59,26 +28,41 @@ const PageLoader = () => (
   </div>
 );
 
-const App = () => (
-  <ErrorBoundary>
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter
-          future={{
-            v7_startTransition: true,
-            v7_relativeSplatPath: true,
-          }}
-        >
-          <Suspense fallback={<PageLoader />}>
-            <Routes>
+const App = () => {
+  const [shouldDie, setShouldDie] = React.useState(false);
+  
+  if (shouldDie) {
+    throw new Error("ROOT LEVEL CRASH");
+  }
+
+  return (
+    <ErrorBoundary variant="full-page">
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter
+            future={{
+              v7_startTransition: true,
+              v7_relativeSplatPath: true,
+            }}
+          >
+            <Suspense fallback={<PageLoader />}>
+              <button 
+                onClick={() => setShouldDie(true)} 
+                className="fixed bottom-4 right-4 z-50 bg-red-500 text-white p-2 rounded text-xs opacity-20 hover:opacity-100"
+              >
+                Kill App
+              </button>
+              <Routes>
               <Route path="/" element={<RootLocaleRedirect />} />
               <Route
                 path="/:lang"
                 element={
                   <LocaleProvider>
-                    <Index />
+                    <ErrorBoundary variant="full-page">
+                      <Index />
+                    </ErrorBoundary>
                   </LocaleProvider>
                 }
               />
@@ -86,7 +70,9 @@ const App = () => (
                 path="/:lang/stories"
                 element={
                   <LocaleProvider>
-                    <Stories />
+                    <ErrorBoundary variant="full-page">
+                      <Stories />
+                    </ErrorBoundary>
                   </LocaleProvider>
                 }
               />
@@ -94,7 +80,9 @@ const App = () => (
                 path="/:lang/resources"
                 element={
                   <LocaleProvider>
-                    <Resources />
+                    <ErrorBoundary variant="full-page">
+                      <Resources />
+                    </ErrorBoundary>
                   </LocaleProvider>
                 }
               />
@@ -102,7 +90,9 @@ const App = () => (
                 path="/:lang/about"
                 element={
                   <LocaleProvider>
-                    <About />
+                    <ErrorBoundary variant="full-page">
+                      <About />
+                    </ErrorBoundary>
                   </LocaleProvider>
                 }
               />
@@ -110,7 +100,9 @@ const App = () => (
                 path="/:lang/careers"
                 element={
                   <LocaleProvider>
-                    <Careers />
+                    <ErrorBoundary variant="full-page">
+                      <Careers />
+                    </ErrorBoundary>
                   </LocaleProvider>
                 }
               />
@@ -118,7 +110,9 @@ const App = () => (
                 path="/:lang/volunteer"
                 element={
                   <LocaleProvider>
-                    <Volunteer />
+                    <ErrorBoundary variant="full-page">
+                      <Volunteer />
+                    </ErrorBoundary>
                   </LocaleProvider>
                 }
               />
@@ -126,7 +120,39 @@ const App = () => (
                 path="/:lang/donate"
                 element={
                   <LocaleProvider>
-                    <Donation />
+                    <ErrorBoundary variant="full-page">
+                      <Donation />
+                    </ErrorBoundary>
+                  </LocaleProvider>
+                }
+              />
+              <Route
+                path="/:lang/sickle-cell"
+                element={
+                  <LocaleProvider>
+                    <ErrorBoundary variant="full-page">
+                      <SickleCell />
+                    </ErrorBoundary>
+                  </LocaleProvider>
+                }
+              />
+              <Route
+                path="/:lang/tb-management"
+                element={
+                  <LocaleProvider>
+                    <ErrorBoundary variant="full-page">
+                      <TBManagement />
+                    </ErrorBoundary>
+                  </LocaleProvider>
+                }
+              />
+              <Route
+                path="/:lang/nutrition-growth"
+                element={
+                  <LocaleProvider>
+                    <ErrorBoundary variant="full-page">
+                      <NutritionGrowth />
+                    </ErrorBoundary>
                   </LocaleProvider>
                 }
               />

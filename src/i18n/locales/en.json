@@ -7,7 +7,11 @@
     "getInvolved": "Get Involved",
     "careers": "Careers",
     "volunteer": "Volunteer",
-    "donate": "Donate"
+    "donate": "Donate",
+    "services": "Services",
+    "sickleCell": "Sickle Cell Care",
+    "tbManagement": "TB Management",
+    "nutritionGrowth": "Nutrition & Growth"
   },
   "language": {
     "label": "Language",
@@ -471,5 +475,106 @@
       "body": "Your donation helps us train volunteers, organize camps, and reach more families across Madhya Pradesh.",
       "button": "Support Our Work"
     }
+  },
+  "sickleCellPage": {
+    "eyebrow": "Specialized Care",
+    "heading": "Comprehensive Sickle Cell Management",
+    "subtitle": "Genetic health screening, crisis prevention, and longitudinal support for patients in rural Madhya Pradesh.",
+    "about": {
+      "title": "Understanding the Journey",
+      "description": "Sickle Cell Disease is more than a diagnosis; it's a lifelong journey. We provide a sanctuary of care where patients receive state-of-the-art screening and personalized treatment plans.",
+      "stats": [
+        { "value": "15,000+", "label": "Screenings Done" },
+        { "value": "120+", "label": "Active Support Groups" },
+        { "value": "24/7", "label": "Crisis Helpline" }
+      ]
+    },
+    "services": {
+      "title": "Our Specialized Services",
+      "items": [
+        {
+          "title": "Advanced Screening",
+          "description": "Using HPLC and solubility tests for accurate early-stage detection in infants and adults."
+        },
+        {
+          "title": "Crisis Management",
+          "description": "Long-term hydroxyurea therapy and emergency protocols for pain crises."
+        },
+        {
+          "title": "Genetic Counseling",
+          "description": "Helping families understand inheritance patterns and pre-marital screening."
+        }
+      ]
+    }
+  },
+  "tbPage": {
+    "eyebrow": "Breath for Life",
+    "heading": "Community-Based TB Management",
+    "subtitle": "Breaking the cycle of transmission through early detection, DOTS supervision, and nutritional rehabilitation.",
+    "about": {
+      "title": "Our Approach",
+      "description": "TB management in rural areas requires more than just medicine. We integrate nutritional support and community monitoring to ensure every patient completes their journey to recovery.",
+      "stats": [
+        { "value": "95%", "label": "Treatment Completion" },
+        { "value": "800+", "label": "Patients on DOTS" },
+        { "value": "60+", "label": "Village DOTS Centers" }
+      ]
+    },
+    "services": {
+      "title": "Key Interventions",
+      "items": [
+        {
+          "title": "Sputum Collection",
+          "description": "Doorstep collection and rapid transport to CBNAAT testing centers."
+        },
+        {
+          "title": "Nutritional Kits",
+          "description": "High-protein supplements and ration support to combat TB-related weight loss."
+        },
+        {
+          "title": "Treatment Supervision",
+          "description": "Mobile tracking and community DOTS providers to minimize defaults."
+        }
+      ]
+    }
+  },
+  "nutritionPage": {
+    "eyebrow": "Building Futures",
+    "heading": "Nutrition & Growth Monitoring",
+    "subtitle": "Ensuring every child in our focus districts has the nutritional foundation to thrive and grow.",
+    "about": {
+      "title": "Rooted in Nutrition",
+      "description": "Malnutrition is the silent backdrop to many health crises. Our program focuses on early identification and sustainable dietary interventions for children and expectant mothers.",
+      "stats": [
+        { "value": "5,000+", "label": "Children Monitored" },
+        { "value": "2,000+", "label": "Maternal Kits" },
+        { "value": "40+", "label": "Nutrition Hubs" }
+      ]
+    },
+    "services": {
+      "title": "Nurturing Growth",
+      "items": [
+        {
+          "title": "Growth Monitoring",
+          "description": "Monthly MUAC and weight tracking for children under five to detect early stunting."
+        },
+        {
+          "title": "Therapeutic Food",
+          "description": "Distribution of local, high-energy nutrient-dense food for SAM and MAM cases."
+        },
+        {
+          "title": "Kitchen Gardens",
+          "description": "Empowering families to grow nutrition-rich vegetables in their own backyards."
+        }
+      ]
+    }
+  },
+  "errors": {
+    "title": "Something went wrong",
+    "description": "The application encountered an unexpected error.",
+    "retry": "Try again",
+    "reload": "Reload page",
+    "backToHome": "Back to Home",
+    "featureError": "This section could not be loaded."
   }
 }

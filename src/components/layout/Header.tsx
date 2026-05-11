@@ -13,6 +13,67 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { AnimatePresence, motion } from "framer-motion";
 
+const MobileSubmenu = ({
+  label,
+  links,
+  isActive,
+  onClose,
+}: {
+  label: string;
+  links: { label: string; to: string }[];
+  isActive: (to: string) => boolean;
+  onClose: () => void;
+}) => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div className="border-b border-border/40">
+      <button
+        onClick={() => setIsOpen((v) => !v)}
+        className="w-full text-base py-4 flex items-center justify-between text-foreground/80 hover:text-foreground transition-colors group"
+        aria-expanded={isOpen}
+      >
+        <span className={cn(isOpen ? "text-primary font-medium" : "")}>{label}</span>
+        <motion.div
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+        >
+          <ChevronDown className={cn("w-4 h-4 transition-colors", isOpen ? "text-primary" : "text-foreground/40")} />
+        </motion.div>
+      </button>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="overflow-hidden"
+          >
+            <div className="pl-4 pb-4 flex flex-col gap-1 border-l border-primary/10 ml-1">
+              {links.map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  onClick={onClose}
+                  className={cn(
+                    "text-sm py-2.5 px-3 rounded-lg transition-colors flex items-center gap-2",
+                    isActive(link.to)
+                      ? "text-primary font-medium bg-primary/5"
+                      : "text-foreground/70 hover:text-foreground hover:bg-foreground/5",
+                  )}
+                >
+                  <span className={cn("w-1 h-1 rounded-full", isActive(link.to) ? "bg-primary" : "bg-foreground/20")} />
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
+
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -65,6 +126,58 @@ const Header = () => {
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
+          {/* Services Dropdown */}
+          <DropdownMenu modal={false}>
+            <DropdownMenuTrigger asChild>
+              <button
+                className={cn(
+                  "text-sm px-3.5 py-2 transition-colors duration-300 inline-flex items-center gap-1",
+                  transparent
+                    ? "text-parchment/85 hover:text-parchment"
+                    : "text-foreground/70 hover:text-foreground",
+                )}
+              >
+                {t("nav.services")}
+                <ChevronDown className="w-3.5 h-3.5" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start" sideOffset={8} className="bg-parchment border-border/60 w-max min-w-[200px]">
+              <DropdownMenuItem asChild>
+                <Link
+                  to={localePath("sickle-cell")}
+                  className={cn(
+                    "w-full cursor-pointer",
+                    isActive(localePath("sickle-cell")) ? "text-primary font-medium" : "text-foreground"
+                  )}
+                >
+                  {t("nav.sickleCell")}
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link
+                  to={localePath("tb-management")}
+                  className={cn(
+                    "w-full cursor-pointer",
+                    isActive(localePath("tb-management")) ? "text-primary font-medium" : "text-foreground"
+                  )}
+                >
+                  {t("nav.tbManagement")}
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link
+                  to={localePath("nutrition-growth")}
+                  className={cn(
+                    "w-full cursor-pointer",
+                    isActive(localePath("nutrition-growth")) ? "text-primary font-medium" : "text-foreground"
+                  )}
+                >
+                  {t("nav.nutritionGrowth")}
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
           {regularLinks.map((link) => (
             <Link
               key={link.to}
@@ -159,7 +272,19 @@ const Header = () => {
       </div>
 
       {mobileOpen && (
-        <div className="lg:hidden bg-parchment border-t border-border px-6 py-6 flex flex-col gap-1">
+        <div className="lg:hidden bg-parchment border-t border-border px-6 py-6 flex flex-col gap-1 overflow-y-auto max-h-[85vh]">
+          {/* Services - Mobile */}
+          <MobileSubmenu
+            label={t("nav.services")}
+            links={[
+              { label: t("nav.sickleCell"), to: localePath("sickle-cell") },
+              { label: t("nav.tbManagement"), to: localePath("tb-management") },
+              { label: t("nav.nutritionGrowth"), to: localePath("nutrition-growth") },
+            ]}
+            isActive={isActive}
+            onClose={() => setMobileOpen(false)}
+          />
+
           {regularLinks.map((link) => (
             <Link
               key={link.to}
@@ -175,60 +300,15 @@ const Header = () => {
           ))}
 
           {/* Get Involved - Mobile */}
-          <div className="border-b border-border/40">
-            <button
-              onClick={() => setGetInvolvedOpen((v) => !v)}
-              className="w-full text-base py-3 flex items-center justify-between text-foreground/80 hover:text-foreground transition-colors"
-              aria-expanded={getInvolvedOpen}
-              aria-label="Toggle Get Involved submenu"
-            >
-              <span>{t("nav.getInvolved")}</span>
-              <motion.div
-                animate={{ rotate: getInvolvedOpen ? 180 : 0 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-              >
-                <ChevronDown className="w-4 h-4" />
-              </motion.div>
-            </button>
-            <AnimatePresence>
-              {getInvolvedOpen && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
-                  className="overflow-hidden"
-                >
-                  <div className="pl-4 pb-3 flex flex-col gap-1">
-                    <Link
-                      to={localePath("careers")}
-                      onClick={() => setMobileOpen(false)}
-                      className={cn(
-                        "text-base py-2 px-2 rounded-lg transition-colors",
-                        isActive(localePath("careers"))
-                          ? "text-primary font-medium bg-primary/5"
-                          : "text-foreground/70 hover:text-foreground hover:bg-foreground/5",
-                      )}
-                    >
-                      {t("nav.careers")}
-                    </Link>
-                    <Link
-                      to={localePath("volunteer")}
-                      onClick={() => setMobileOpen(false)}
-                      className={cn(
-                        "text-base py-2 px-2 rounded-lg transition-colors",
-                        isActive(localePath("volunteer"))
-                          ? "text-primary font-medium bg-primary/5"
-                          : "text-foreground/70 hover:text-foreground hover:bg-foreground/5",
-                      )}
-                    >
-                      {t("nav.volunteer")}
-                    </Link>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
+          <MobileSubmenu
+            label={t("nav.getInvolved")}
+            links={[
+              { label: t("nav.careers"), to: localePath("careers") },
+              { label: t("nav.volunteer"), to: localePath("volunteer") },
+            ]}
+            isActive={isActive}
+            onClose={() => setMobileOpen(false)}
+          />
 
           <Link
             to={localePath("donate")}

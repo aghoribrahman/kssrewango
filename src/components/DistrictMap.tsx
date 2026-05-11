@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
+import ErrorBoundary from "@/components/shared/ErrorBoundary";
 
 interface District {
   id: string;
@@ -29,7 +30,7 @@ const DISTRICTS: District[] = [
   { id: "mandla", nameKey: "map.districts.mandla", campKey: "map.camps.mandla", cx: 490, cy: 380 },
 ];
 
-const DistrictMap = () => {
+const DistrictMapInner = () => {
   const { t } = useTranslation();
   const [activeId, setActiveId] = useState<string>("anuppur");
   const active = DISTRICTS.find((d) => d.id === activeId) ?? DISTRICTS[0];
@@ -172,5 +173,11 @@ const DistrictMap = () => {
     </section>
   );
 };
+
+const DistrictMap = () => (
+  <ErrorBoundary>
+    <DistrictMapInner />
+  </ErrorBoundary>
+);
 
 export default DistrictMap;
