@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LocaleProvider, RootLocaleRedirect } from "@/i18n/LocaleProvider";
 import ErrorBoundary from "@/components/shared/ErrorBoundary";
+import ScrollToTop from "@/components/shared/ScrollToTop";
 
 // Lazy load pages for better performance
 const Index = lazy(() => import("./pages/Index"));
@@ -18,6 +19,7 @@ const Donation = lazy(() => import("./pages/Donation"));
 const SickleCell = lazy(() => import("./pages/SickleCell"));
 const TBManagement = lazy(() => import("./pages/TBManagement"));
 const NutritionGrowth = lazy(() => import("./pages/NutritionGrowth"));
+const Gallery = lazy(() => import("./pages/Gallery"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -40,6 +42,7 @@ const App = () => (
             v7_relativeSplatPath: true,
           }}
         >
+          <ScrollToTop />
           <Suspense fallback={<PageLoader />}>
             <Routes>
               <Route path="/" element={<RootLocaleRedirect />} />
@@ -139,6 +142,16 @@ const App = () => (
                   <LocaleProvider>
                     <ErrorBoundary variant="full-page">
                       <NutritionGrowth />
+                    </ErrorBoundary>
+                  </LocaleProvider>
+                }
+              />
+              <Route
+                path="/:lang/gallery"
+                element={
+                  <LocaleProvider>
+                    <ErrorBoundary variant="full-page">
+                      <Gallery />
                     </ErrorBoundary>
                   </LocaleProvider>
                 }

@@ -7,11 +7,17 @@ interface StoryCardProps {
   story: Story;
   index: number;
   onOpen: (id: string) => void;
+  translationBase?: "stories" | "gallery";
 }
 
-const StoryCard = ({ story, index, onOpen }: StoryCardProps) => {
+const StoryCard = ({ story, index, onOpen, translationBase = "stories" }: StoryCardProps) => {
   const { t } = useTranslation();
   const isFeatured = index === 0;
+
+  // Key mappings based on translation base
+  const nameKey = translationBase === "stories" ? "name" : "title";
+  const headlineKey = translationBase === "stories" ? "headline" : "title"; // Gallery uses title for headline too
+  const actionKey = translationBase === "stories" ? "stories.read" : "gallery.view"; // Need to ensure gallery.view exists or fallback
 
   return (
     <article
@@ -34,7 +40,7 @@ const StoryCard = ({ story, index, onOpen }: StoryCardProps) => {
         >
           <img
             src={story.image}
-            alt={t(`stories.items.${story.id}.alt`)}
+            alt={t(`${translationBase}.items.${story.id}.alt`, { defaultValue: story.id })}
             loading="lazy"
             width={1024}
             height={1280}
@@ -44,16 +50,25 @@ const StoryCard = ({ story, index, onOpen }: StoryCardProps) => {
             aria-hidden="true"
             className="absolute inset-0 bg-gradient-to-t from-earth-ink/85 via-earth-ink/20 to-transparent"
           />
-          <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-parchment/90 text-foreground text-xs sm:text-xs md:text-sm tracking-wide">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-            {story.district}
-          </div>
+          
+          {story.district && (
+            <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-parchment/90 text-foreground text-xs sm:text-xs md:text-sm tracking-wide">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+              {story.district}
+            </div>
+          )}
+
           <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6 lg:p-7 text-parchment">
             <p className="text-xs uppercase tracking-[0.25em] text-amber-warm/90 mb-3">
-              {t(`stories.items.${story.id}.name`)} ·{" "}
-              <span>
-                {story.age} {t(story.ageLabelKey)}
-              </span>
+              {t(`${translationBase}.items.${story.id}.${nameKey}`)}
+              {story.age > 0 && (
+                <>
+                  {" "}·{" "}
+                  <span>
+                    {story.age} {t(story.ageLabelKey)}
+                  </span>
+                </>
+              )}
             </p>
             <h3
               className={cn(
@@ -61,10 +76,10 @@ const StoryCard = ({ story, index, onOpen }: StoryCardProps) => {
                 isFeatured ? "text-2xl sm:text-3xl md:text-4xl lg:text-5xl" : "text-lg sm:text-xl md:text-xl lg:text-2xl",
               )}
             >
-              {t(`stories.items.${story.id}.headline`)}
+              {t(`${translationBase}.items.${story.id}.${headlineKey}`)}
             </h3>
             <div className="mt-4 inline-flex items-center gap-2 text-xs sm:text-sm md:text-base text-parchment/85 group-hover:text-amber-warm transition-colors">
-              {t("stories.read")}
+              {t(translationBase === "stories" ? "stories.read" : "common.view", { defaultValue: "View" })}
               <ArrowUpRight className="w-4 h-4" />
             </div>
           </div>

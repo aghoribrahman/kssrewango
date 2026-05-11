@@ -1,0 +1,81 @@
+import { Story } from "./stories";
+
+export const GALLERY_ITEMS: Story[] = [
+  {
+    id: "camp1",
+    image: "/gallery/1.jpeg",
+    district: "Anuppur",
+    age: 0,
+    ageLabelKey: "",
+  },
+  {
+    id: "news1",
+    image: "/gallery/2.jpeg",
+    district: "Shahdol",
+    age: 0,
+    ageLabelKey: "",
+  },
+  {
+    id: "camp2",
+    image: "/gallery/3.jpeg",
+    district: "Dindori",
+    age: 0,
+    ageLabelKey: "",
+  },
+  {
+    id: "camp3",
+    image: "/gallery/4.jpeg",
+    district: "Mandla",
+    age: 0,
+    ageLabelKey: "",
+  },
+  {
+    id: "camp4",
+    image: "/gallery/5.jpeg",
+    district: "Umaria",
+    age: 0,
+    ageLabelKey: "",
+  },
+  {
+    id: "camp5",
+    image: "/gallery/7.jpeg",
+    district: "Anuppur",
+    age: 0,
+    ageLabelKey: "",
+  },
+  {
+    id: "news2",
+    image: "/gallery/6.jpeg",
+    district: "Madhya Pradesh",
+    age: 0,
+    ageLabelKey: "",
+  },
+  {
+    id: "camp6",
+    image: "/gallery/9.jpeg",
+    district: "Mandla",
+    age: 0,
+    ageLabelKey: "",
+  },
+  {
+    id: "camp7",
+    image: "/gallery/10.jpeg",
+    district: "Sidhi",
+    age: 0,
+    ageLabelKey: "",
+  },
+  {
+    id: "news3",
+    image: "/gallery/8.jpeg",
+    district: "State Level",
+    age: 0,
+    ageLabelKey: "",
+  },
+  {
+    id: "camp8",
+    image: "/gallery/11.jpeg",
+    district: "Shahdol",
+    age: 0,
+    ageLabelKey: "",
+  },
+];

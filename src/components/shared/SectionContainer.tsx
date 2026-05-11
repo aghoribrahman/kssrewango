@@ -20,4 +20,4 @@ export const SectionContainer = ({
       </div>
     </section>
   );
-};
+};export default SectionContainer;

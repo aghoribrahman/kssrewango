@@ -79,7 +79,7 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [getInvolvedOpen, setGetInvolvedOpen] = useState(false);
   const location = useLocation();
-  const { t } = useTranslation();
+  const { t } = useTranslation("translation");
   const { locale, localePath } = useLocalePath();
 
   const isHome = location.pathname === `/${locale}` || location.pathname === `/${locale}/`;
@@ -93,6 +93,7 @@ const Header = () => {
 
   const regularLinks = [
     { label: t("nav.stories"), to: localePath("stories") },
+    { label: t("nav.gallery"), to: localePath("gallery") },
     { label: t("nav.resources"), to: localePath("resources") },
     { label: t("nav.about"), to: localePath("about") },
   ];

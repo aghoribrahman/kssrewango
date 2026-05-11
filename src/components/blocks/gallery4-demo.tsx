@@ -1,48 +1,49 @@
-import { Gallery4 } from "@/components/blocks/gallery4"
+"use client"
+
 import { useTranslation } from "react-i18next";
+import { Gallery4, GalleryItem } from "./gallery4";
 
-function Gallery4Demo() {
-  const { t } = useTranslation();
+export const Gallery4Demo = () => {
+  const { t } = useTranslation("translation");
 
-  const items = [
+  const items: GalleryItem[] = [
     {
-      id: "screening",
-      title: t("programs.items.screening.title"),
-      description: t("programs.items.screening.description"),
-      href: "#",
-      image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=1080",
+      id: 1,
+      url: "/gallery/1.jpeg",
+      title: t("gallery.items.camp1.title"),
+      description: t("gallery.items.camp1.desc"),
     },
     {
-      id: "nutrition",
-      title: t("programs.items.nutrition.title"),
-      description: t("programs.items.nutrition.description"),
-      href: "#",
-      image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=1080",
+      id: 2,
+      url: "/gallery/2.jpeg",
+      title: t("gallery.items.news1.title"),
+      description: t("gallery.items.news1.desc"),
     },
     {
-      id: "education",
-      title: t("programs.items.education.title"),
-      description: t("programs.items.education.description"),
-      href: "#",
-      image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=1080",
+      id: 3,
+      url: "/gallery/4.jpeg",
+      title: t("gallery.items.camp3.title"),
+      description: t("gallery.items.camp3.desc"),
     },
     {
-      id: "support",
-      title: t("programs.items.support.title"),
-      description: t("programs.items.support.description"),
-      href: "#",
-      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=1080",
+      id: 4,
+      url: "/gallery/6.jpeg",
+      title: t("gallery.items.news2.title"),
+      description: t("gallery.items.news2.desc"),
     },
     {
-      id: "volunteer",
-      title: t("programs.items.volunteer.title"),
-      description: t("programs.items.volunteer.description"),
-      href: "#",
-      image: "https://images.unsplash.com/photo-1559027615-cd169c59d9b4?auto=format&fit=crop&q=80&w=1080",
+      id: 5,
+      url: "/gallery/7.jpeg",
+      title: t("gallery.items.camp5.title"),
+      description: t("gallery.items.camp5.desc"),
     },
   ];
 
-  return <Gallery4 items={items} />;
-}
-
-export { Gallery4Demo };
+  return (
+    <Gallery4
+      title={t("gallery.heading")}
+      subtitle={t("gallery.subtitle")}
+      items={items}
+    />
+  );
+};

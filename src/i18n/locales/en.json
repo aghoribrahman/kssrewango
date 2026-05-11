@@ -1,4 +1,4 @@
-{
+{ 
   "nav": {
     "home": "Home",
     "stories": "Patient Stories",
@@ -11,7 +11,8 @@
     "services": "Services",
     "sickleCell": "Sickle Cell Care",
     "tbManagement": "TB Management",
-    "nutritionGrowth": "Nutrition & Growth"
+    "nutritionGrowth": "Nutrition & Growth",
+    "gallery": "Journal & Gallery"
   },
   "language": {
     "label": "Language",
@@ -574,7 +575,57 @@
     "description": "The application encountered an unexpected error.",
     "retry": "Try again",
     "reload": "Reload page",
-    "backToHome": "Back to Home",
-    "featureError": "This section could not be loaded."
+    "backToHome": "Back to Home"
+  },
+  "gallery": {
+    "eyebrow": "The Visual Record",
+    "heading": "Journal & Field Gallery",
+    "subtitle": "A window into our daily work — from mobile screening camps in remote blocks to awareness drives and news that shapes our mission.",
+    "items": {
+      "camp1": {
+        "title": "Anuppur Screening Camp",
+        "desc": "Our mobile team conducting early screenings for sickle cell at Pushparajgarh."
+      },
+      "camp2": {
+        "title": "Awareness Drive",
+        "desc": "Engaging with village elders in Dindori to break stigmas around genetic health."
+      },
+      "news1": {
+        "title": "District Recognition",
+        "desc": "Featured in local news for our contribution to the TB elimination program."
+      },
+      "camp3": {
+        "title": "Nutrition Workshop",
+        "desc": "Demonstrating high-protein local recipes for mothers in Mandla."
+      },
+      "camp4": {
+        "title": "The Mobile Unit",
+        "desc": "Our lifeline that travels hundreds of kilometres every month to reach the last mile."
+      },
+      "news2": {
+        "title": "Impact Report",
+        "desc": "A milestone reached — 50,000 screenings completed across the eastern belt."
+      },
+      "camp5": {
+        "title": "Tribal Health Meet",
+        "desc": "Collaborating with local community leaders to expand our reach."
+      },
+      "news3": {
+        "title": "State Health Award",
+        "desc": "KSS recognized for excellence in rural health innovation."
+      },
+      "camp6": {
+        "title": "School Health Drive",
+        "desc": "Educating the next generation about preventive health and hygiene."
+      },
+      "camp7": {
+        "title": "Field Research",
+        "desc": "Collecting vital data to better understand regional health challenges."
+      },
+      "camp8": {
+        "title": "Emergency Care",
+        "desc": "Our team providing immediate assistance during a village health crisis."
+      }
+    }
   }
 }
