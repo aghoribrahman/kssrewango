@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import AnimateIn from "@/components/shared/AnimateIn";
 
 interface SectionHeaderProps {
   eyebrow?: string;
@@ -20,11 +20,7 @@ export const SectionHeader = ({
   dark = false,
 }: SectionHeaderProps) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
+    <AnimateIn
       className={`max-w-2xl ${className}`}
     >
       {eyebrow && (
@@ -40,6 +36,6 @@ export const SectionHeader = ({
           {subtitle}
         </p>
       )}
-    </motion.div>
+    </AnimateIn>
   );
 };
