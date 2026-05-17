@@ -48,9 +48,12 @@ const ResourceCard = ({ resource }: ResourceCardProps) => {
           variant="default" 
           size="sm" 
           className="flex-1 bg-forest hover:bg-forest-deep text-parchment gap-1.5 h-8 text-xs"
+          asChild
         >
-          <Download className="w-3 h-3" />
-          {t("resources.card.download")}
+          <a href={resource.downloadUrl} target="_blank" rel="noopener noreferrer" download>
+            <Download className="w-3 h-3" />
+            {t("resources.card.download")}
+          </a>
         </Button>
         
         <TooltipProvider>

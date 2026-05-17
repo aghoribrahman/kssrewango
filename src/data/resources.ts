@@ -15,7 +15,7 @@ export const resources: Resource[] = [
     description: "सिकल सेल रोग को समझने और प्रबंधित करने के लिए एक व्यापक मार्गदर्शिका।",
     category: "care",
     language: "hi",
-    downloadUrl: "#",
+    downloadUrl: "/pdf/Sickle Cell Awareness comic.pdf",
     summary: "इसमें संकट (crisis) के लक्षणों, जलयोजन (hydration) के महत्व और दैनिक देखभाल के सुझावों को शामिल किया गया है।"
   },
   {
