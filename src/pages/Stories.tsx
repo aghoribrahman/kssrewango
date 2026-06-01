@@ -6,11 +6,38 @@ import GondPattern from "@/components/shared/GondPattern";
 import { STORIES } from "@/data/stories";
 import StoryCard from "@/features/stories/components/StoryCard";
 import StoryDialog from "@/features/stories/components/StoryDialog";
+import { useStories } from "@/hooks/useStories";
+import { useTranslatedValue } from "@/hooks/useTranslatedValue";
+import storyMeena from "@/assets/story-meena.webp";
+import storyRamesh from "@/assets/story-ramesh.webp";
+import storySavitri from "@/assets/story-savitri.webp";
+import storyArjun from "@/assets/story-arjun.webp";
+
+const STORY_IMAGES: Record<string, string> = {
+  meena: storyMeena,
+  ramesh: storyRamesh,
+  savitri: storySavitri,
+  arjun: storyArjun
+};
 
 const Stories = () => {
   const { t } = useTranslation();
+  const { getTranslated } = useTranslatedValue();
+  const { data: dbStories } = useStories();
   const [openId, setOpenId] = useState<string | null>(null);
-  const openStory = STORIES.find((s) => s.id === openId) ?? null;
+
+  const storiesList = dbStories ? dbStories.map((s) => ({
+    id: s.story_key,
+    image: STORY_IMAGES[s.story_key] || s.image_url,
+    district: getTranslated(s, "district"),
+    age: s.age,
+    ageLabelKey: "stories.ageYears",
+    name: getTranslated(s, "name"),
+    headline: getTranslated(s, "summary"),
+    content: getTranslated(s, "content")
+  })) : STORIES;
+
+  const openStory = storiesList.find((s) => s.id === openId) ?? null;
 
   return (
     <>
@@ -35,7 +62,7 @@ const Stories = () => {
         <section className="px-6 md:px-10 pb-24">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-6 md:gap-7 auto-rows-fr">
-              {STORIES.map((story, i) => (
+              {storiesList.map((story, i) => (
                 <StoryCard key={story.id} story={story} index={i} onOpen={setOpenId} />
               ))}
             </div>

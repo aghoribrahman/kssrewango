@@ -9,6 +9,9 @@ export interface Story {
   district: string;
   age: number;
   ageLabelKey: string;
+  name?: string;
+  headline?: string;
+  content?: string | string[];
 }
 
 export const STORIES: Story[] = [

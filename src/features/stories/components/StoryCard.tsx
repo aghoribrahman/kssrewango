@@ -60,7 +60,7 @@ const StoryCard = ({ story, index, onOpen, translationBase = "stories" }: StoryC
 
           <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6 lg:p-7 text-parchment">
             <p className="text-xs uppercase tracking-[0.25em] text-amber-warm/90 mb-3">
-              {t(`${translationBase}.items.${story.id}.${nameKey}`)}
+              {story.name || t(`${translationBase}.items.${story.id}.${nameKey}`)}
               {story.age > 0 && (
                 <>
                   {" "}·{" "}
@@ -76,7 +76,7 @@ const StoryCard = ({ story, index, onOpen, translationBase = "stories" }: StoryC
                 isFeatured ? "text-2xl sm:text-3xl md:text-4xl lg:text-5xl" : "text-lg sm:text-xl md:text-xl lg:text-2xl",
               )}
             >
-              {t(`${translationBase}.items.${story.id}.${headlineKey}`)}
+              {story.headline || t(`${translationBase}.items.${story.id}.${headlineKey}`)}
             </h3>
             <div className="mt-4 inline-flex items-center gap-2 text-xs sm:text-sm md:text-base text-parchment/85 group-hover:text-amber-warm transition-colors">
               {t(translationBase === "stories" ? "stories.read" : "common.view", { defaultValue: "View" })}

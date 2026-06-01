@@ -73,11 +73,15 @@ const StoryDialog = ({ story, onClose, translationBase = "stories" }: StoryDialo
                 id="story-dialog-title"
                 className="font-serif text-3xl sm:text-4xl md:text-5xl text-foreground leading-[1.1] mb-6"
               >
-                {t(`${translationBase}.items.${story.id}.${headlineKey}`)}
+                {story.headline || t(`${translationBase}.items.${story.id}.${headlineKey}`)}
               </h2>
 
               <div className="space-y-5 text-foreground/80 leading-relaxed text-base sm:text-lg">
-                {translationBase === "stories" ? (
+                {story.content ? (
+                  (Array.isArray(story.content) ? story.content : [story.content]).map(
+                    (para, i) => <p key={i} className="first-letter:text-3xl first-letter:font-serif first-letter:mr-1 first-letter:float-left md:first-letter:text-initial md:first-letter:font-inherit md:first-letter:mr-0 md:first-letter:float-none">{para}</p>
+                  )
+                ) : translationBase === "stories" ? (
                   (t(`${translationBase}.items.${story.id}.${bodyKey}`, { returnObjects: true }) as string[]).map(
                     (para, i) => <p key={i} className="first-letter:text-3xl first-letter:font-serif first-letter:mr-1 first-letter:float-left md:first-letter:text-initial md:first-letter:font-inherit md:first-letter:mr-0 md:first-letter:float-none">{para}</p>
                   )

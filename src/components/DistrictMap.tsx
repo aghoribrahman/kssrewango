@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
 import ErrorBoundary from "@/components/shared/ErrorBoundary";
+import { useCamps } from "@/hooks/useCamps";
+import { useTranslatedValue } from "@/hooks/useTranslatedValue";
 
 interface District {
   id: string;
@@ -32,8 +34,11 @@ const DISTRICTS: District[] = [
 
 const DistrictMapInner = () => {
   const { t } = useTranslation();
+  const { getTranslated } = useTranslatedValue();
+  const { data: dbCamps } = useCamps();
   const [activeId, setActiveId] = useState<string>("anuppur");
   const active = DISTRICTS.find((d) => d.id === activeId) ?? DISTRICTS[0];
+  const activeDbCamp = dbCamps?.find((c) => c.district_id === activeId);
 
   return (
     <section className="bg-parchment py-20 md:py-28 px-6 md:px-10">
@@ -143,7 +148,7 @@ const DistrictMapInner = () => {
                 {t("map.nextCamp")}
               </p>
               <p className="font-serif text-2xl text-foreground mb-2">
-                {t(active.campKey)}
+                {activeDbCamp ? getTranslated(activeDbCamp, "camp_name") : t(active.campKey)}
               </p>
               <p className="text-sm text-foreground/60 leading-relaxed">
                 {t("map.cta")}

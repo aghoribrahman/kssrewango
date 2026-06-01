@@ -5,19 +5,33 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import GondPattern from "@/components/shared/GondPattern";
 import { resources } from "@/data/resources";
+import { useResources } from "@/hooks/useResources";
+import { useTranslatedValue } from "@/hooks/useTranslatedValue";
 import ResourceFilters from "@/features/resources/components/ResourceFilters";
 import ResourceGrid from "@/features/resources/components/ResourceGrid";
 
 const Resources = () => {
   const { t } = useTranslation();
+  const { getTranslated } = useTranslatedValue();
+  const { data: dbResources } = useResources();
   const [searchQuery, setSearchQuery] = useState("");
   const [langFilter, setLangFilter] = useState<"all" | "hi" | "en">("all");
   const [categoryFilter, setCategoryFilter] = useState("all");
 
-  const filteredResources = resources.filter((res) => {
+  const resourcesList = dbResources ? dbResources.map((res) => ({
+    id: res.id,
+    title: getTranslated(res, "title"),
+    description: getTranslated(res, "description"),
+    summary: getTranslated(res, "summary") || "",
+    category: res.category,
+    language: res.language,
+    downloadUrl: res.download_url,
+  })) : resources;
+
+  const filteredResources = resourcesList.filter((res) => {
     const matchesSearch = res.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
                           res.description.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesLang = langFilter === "all" || res.language === langFilter;
+    const matchesLang = langFilter === "all" || res.language === langFilter || res.language === "both";
     const matchesCategory = categoryFilter === "all" || res.category === categoryFilter;
     return matchesSearch && matchesLang && matchesCategory;
   });

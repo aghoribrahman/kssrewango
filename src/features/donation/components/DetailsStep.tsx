@@ -6,11 +6,30 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 interface DetailsStepProps {
+  firstName: string;
+  onFirstNameChange: (v: string) => void;
+  lastName: string;
+  onLastNameChange: (v: string) => void;
+  email: string;
+  onEmailChange: (v: string) => void;
+  pan: string;
+  onPanChange: (v: string) => void;
   onNext: () => void;
   onBack: () => void;
 }
 
-const DetailsStep = ({ onNext, onBack }: DetailsStepProps) => {
+const DetailsStep = ({
+  firstName,
+  onFirstNameChange,
+  lastName,
+  onLastNameChange,
+  email,
+  onEmailChange,
+  pan,
+  onPanChange,
+  onNext,
+  onBack,
+}: DetailsStepProps) => {
   const { t } = useTranslation();
 
   return (
@@ -24,20 +43,45 @@ const DetailsStep = ({ onNext, onBack }: DetailsStepProps) => {
       <div className="grid grid-cols-2 gap-4">
         <div className="space-y-2">
           <Label htmlFor="first">{t("donation.form.firstName")}</Label>
-          <Input id="first" placeholder="Ramesh" className="bg-white/50" />
+          <Input
+            id="first"
+            placeholder="Ramesh"
+            className="bg-white/50"
+            value={firstName}
+            onChange={(e) => onFirstNameChange(e.target.value)}
+          />
         </div>
         <div className="space-y-2">
           <Label htmlFor="last">{t("donation.form.lastName")}</Label>
-          <Input id="last" placeholder="Gond" className="bg-white/50" />
+          <Input
+            id="last"
+            placeholder="Gond"
+            className="bg-white/50"
+            value={lastName}
+            onChange={(e) => onLastNameChange(e.target.value)}
+          />
         </div>
       </div>
       <div className="space-y-2">
         <Label htmlFor="email">{t("donation.form.email")}</Label>
-        <Input id="email" type="email" placeholder="ramesh@example.com" className="bg-white/50" />
+        <Input
+          id="email"
+          type="email"
+          placeholder="ramesh@example.com"
+          className="bg-white/50"
+          value={email}
+          onChange={(e) => onEmailChange(e.target.value)}
+        />
       </div>
       <div className="space-y-2">
         <Label htmlFor="pan">{t("donation.form.pan")}</Label>
-        <Input id="pan" placeholder="ABCDE1234F" className="bg-white/50 uppercase" />
+        <Input
+          id="pan"
+          placeholder="ABCDE1234F"
+          className="bg-white/50 uppercase"
+          value={pan}
+          onChange={(e) => onPanChange(e.target.value)}
+        />
       </div>
 
       <div className="flex gap-4 pt-4">

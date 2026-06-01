@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import CountUp from "@/components/CountUp";
 import GondPattern from "@/components/shared/GondPattern";
+import { useImpactStats } from "@/hooks/useImpactStats";
 
 interface Stat {
   value: number;
@@ -9,16 +10,17 @@ interface Stat {
   helperKey: string;
 }
 
-const STATS: Stat[] = [
-  { value: 50000, suffix: "+", labelKey: "impact.screenings.label", helperKey: "impact.screenings.helper" },
-  { value: 12000, suffix: "+", labelKey: "impact.lives.label", helperKey: "impact.lives.helper" },
-  { value: 6, suffix: "", labelKey: "impact.districts.label", helperKey: "impact.districts.helper" },
-  { value: 240, suffix: "+", labelKey: "impact.camps.label", helperKey: "impact.camps.helper" },
-];
-
 const ImpactStats = () => {
   const { t, i18n } = useTranslation();
+  const { data: dbStats } = useImpactStats();
   const locale = i18n.language === "hi" ? "hi-IN" : "en-IN";
+
+  const stats: Stat[] = [
+    { value: dbStats?.screenings ?? 50000, suffix: "+", labelKey: "impact.screenings.label", helperKey: "impact.screenings.helper" },
+    { value: dbStats?.lives_touched ?? 12000, suffix: "+", labelKey: "impact.lives.label", helperKey: "impact.lives.helper" },
+    { value: dbStats?.active_districts ?? 6, suffix: "", labelKey: "impact.districts.label", helperKey: "impact.districts.helper" },
+    { value: dbStats?.camps_held ?? 240, suffix: "+", labelKey: "impact.camps.label", helperKey: "impact.camps.helper" },
+  ];
 
   return (
     <section className="relative bg-forest text-parchment overflow-hidden py-14 md:py-20">
@@ -43,7 +45,7 @@ const ImpactStats = () => {
         </div>
 
         <dl className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-parchment/10 rounded-2xl overflow-hidden">
-          {STATS.map((stat) => (
+          {stats.map((stat) => (
             <div
               key={stat.labelKey}
               className="bg-forest p-5 md:p-6 flex flex-col gap-1.5"

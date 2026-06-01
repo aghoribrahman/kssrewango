@@ -9,12 +9,14 @@ interface PaymentStepProps {
   paymentMethod: string;
   onPaymentMethodChange: (method: string) => void;
   onBack: () => void;
+  onSubmit: () => void;
 }
 
 const PaymentStep = ({
   paymentMethod,
   onPaymentMethodChange,
   onBack,
+  onSubmit,
 }: PaymentStepProps) => {
   const { t } = useTranslation();
 
@@ -61,7 +63,7 @@ const PaymentStep = ({
           <ArrowLeft className="w-4 h-4" />
           {t("donation.form.back")}
         </Button>
-        <Button className="flex-[2] h-12 bg-forest hover:bg-forest-deep text-parchment rounded-full gap-2 font-bold tracking-wide">
+        <Button className="flex-[2] h-12 bg-forest hover:bg-forest-deep text-parchment rounded-full gap-2 font-bold tracking-wide" onClick={onSubmit}>
           <Heart className="w-4 h-4 fill-current" />
           {t("donation.form.submit")}
         </Button>

@@ -18,10 +18,19 @@ const Donation = () => {
     customAmount,
     paymentMethod,
     setPaymentMethod,
+    firstName,
+    setFirstName,
+    lastName,
+    setLastName,
+    email,
+    setEmail,
+    pan,
+    setPan,
     handleNext,
     handleBack,
     selectImpact,
     updateCustomAmount,
+    submitDonation,
   } = useDonationForm();
 
   return (
@@ -82,6 +91,14 @@ const Donation = () => {
 
                 {step === 2 && (
                   <DetailsStep
+                    firstName={firstName}
+                    onFirstNameChange={setFirstName}
+                    lastName={lastName}
+                    onLastNameChange={setLastName}
+                    email={email}
+                    onEmailChange={setEmail}
+                    pan={pan}
+                    onPanChange={setPan}
                     onNext={handleNext}
                     onBack={handleBack}
                   />
@@ -92,6 +109,7 @@ const Donation = () => {
                     paymentMethod={paymentMethod}
                     onPaymentMethodChange={setPaymentMethod}
                     onBack={handleBack}
+                    onSubmit={submitDonation}
                   />
                 )}
               </AnimatePresence>
